@@ -48,39 +48,83 @@
     <div class="hero-side-image hero-side-right"
          style="background-image: url('https://images.unsplash.com/photo-1647427060118-4911c9821b82?fm=jpg&amp;q=60&amp;w=1200&amp;auto=format&amp;fit=crop');"
          aria-hidden="true"></div>
+
+    <!-- 1. Signature Hero Circuit Trace -->
+    <div class="hero-trace-container" aria-hidden="true">
+      <svg class="hero-trace-svg" viewBox="0 0 920 400" fill="none" preserveAspectRatio="none">
+        <path class="circuit-path" d="M 12 10 L 80 10 L 120 70 L 120 280 L 170 330 L 920 330" />
+        <circle class="circuit-via" cx="12" cy="10" r="4" />
+        <circle class="circuit-via circuit-via-end" cx="915" cy="330" r="4" />
+      </svg>
+    </div>
+
     <div class="section-inner hero-inner">
-      <p class="eyebrow-line"><span class="eyebrow-tick" aria-hidden="true"></span>Northville, Michigan</p>
+      <!-- 2. Live HMI Status Indicator -->
+      <div class="eyebrow-line">
+        <span class="eyebrow-tick" aria-hidden="true"></span>
+        <span>Northville, Michigan</span>
+        <span class="hmi-indicator">
+          <span class="hmi-pulse" aria-hidden="true"></span>
+          <span class="hmi-text">SYSTEM ONLINE</span>
+        </span>
+      </div>
+
       <h1>Building the logic that runs<br>the assembly line.</h1>
       <p class="hero-lede">I'm an Industrial Engineering student at Wayne State University and an automation
         engineer who programs the PLCs, HMIs, and inspection systems that keep automotive production lines
         running &mdash; and catches the failures that shouldn't reach the next station.</p>
+      
+      <!-- 3. Bolder, Glowing CTA Buttons -->
       <div class="hero-actions">
         <a class="btn btn-primary" href="#experience">See the work</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
-      <dl class="hero-stats">
-        <div class="stat">
-          <dt>Focus</dt>
-          <dd>Automation &amp; controls</dd>
+
+      <!-- 4. Hero Big Anchor Number Block -->
+      <div class="hero-bottom-group">
+        <div class="hero-anchor-stat">
+          <span class="anchor-num">3<sup>+</sup></span>
+          <span class="anchor-label">Years of hands-on PLC, HMI &amp; vision commissioning</span>
         </div>
-        <div class="stat">
-          <dt>Program</dt>
-          <dd>B.S. Industrial Engineering, exp. 2027</dd>
-        </div>
-        <div class="stat stat-wide">
-          <dt>Certifications</dt>
-          <dd class="stat-chips">
-            <span class="chip">Six Sigma Green Belt</span>
-            <span class="chip">GCCH-1</span>
-            <span class="chip">GCCS-2</span>
-          </dd>
-        </div>
-      </dl>
+
+        <dl class="hero-stats">
+          <div class="stat">
+            <dt>Focus</dt>
+            <dd>Automation &amp; controls</dd>
+          </div>
+          <div class="stat">
+            <dt>Program</dt>
+            <dd>B.S. Industrial Engineering, exp. 2027</dd>
+          </div>
+          <div class="stat stat-wide">
+            <dt>Certifications</dt>
+            <dd class="stat-chips">
+              <span class="chip">Six Sigma Green Belt</span>
+              <span class="chip">GCCH-1</span>
+              <span class="chip">GCCS-2</span>
+            </dd>
+          </div>
+        </dl>
+      </div>
     </div>
   </section>
 
+  <!-- 6. Circuit Trace Section Divider -->
+  <div class="section-trace-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M 0 12 L 450 12 L 465 2 L 735 2 L 750 12 L 1200 12" />
+      <circle cx="450" cy="12" r="3" />
+      <circle cx="750" cy="12" r="3" />
+    </svg>
+  </div>
+
   <!-- EXPERIENCE -->
   <section id="experience" class="section">
+    <!-- 5. Full-Width Industrial Imagery Band -->
+    <div class="industrial-image-band" aria-hidden="true" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?fm=jpg&amp;q=75&amp;w=1800&amp;auto=format&amp;fit=crop');">
+      <div class="band-overlay"></div>
+    </div>
+
     <div class="section-inner">
       <div class="section-head">
         <h2>Experience</h2>
@@ -88,7 +132,6 @@
       </div>
 
       <ol class="timeline">
-
         <li class="timeline-item">
           <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-card">
@@ -134,10 +177,18 @@
             </ul>
           </div>
         </li>
-
       </ol>
     </div>
   </section>
+
+  <!-- Circuit Trace Divider -->
+  <div class="section-trace-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M 0 12 L 280 12 L 295 22 L 565 22 L 580 12 L 1200 12" />
+      <circle cx="280" cy="12" r="3" />
+      <circle cx="580" cy="12" r="3" />
+    </svg>
+  </div>
 
   <!-- EDUCATION -->
   <section id="education" class="section section-alt">
@@ -178,6 +229,15 @@
     </div>
   </section>
 
+  <!-- Circuit Trace Divider -->
+  <div class="section-trace-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M 0 12 L 620 12 L 635 2 L 880 2 L 895 12 L 1200 12" />
+      <circle cx="620" cy="12" r="3" />
+      <circle cx="895" cy="12" r="3" />
+    </svg>
+  </div>
+
   <!-- SKILLS -->
   <section id="skills" class="section">
     <div class="section-inner">
@@ -213,6 +273,15 @@
     </div>
   </section>
 
+  <!-- Circuit Trace Divider -->
+  <div class="section-trace-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M 0 12 L 350 12 L 365 22 L 600 22 L 615 12 L 1200 12" />
+      <circle cx="350" cy="12" r="3" />
+      <circle cx="615" cy="12" r="3" />
+    </svg>
+  </div>
+
   <!-- ABOUT ME -->
   <section id="about" class="section section-alt">
     <div class="section-inner">
@@ -221,7 +290,7 @@
       </div>
       <div class="about-grid">
         <div class="about-photo">
-          <img src="images/tennis.jpg" alt="Ilija and a teammate holding the 2018 Michigan Division 1 boys tennis championship trophy" loading="lazy">
+          <img src="tennis.jpg" alt="Ilija and a teammate holding the 2018 Michigan Division 1 boys tennis championship trophy" loading="lazy">
         </div>
         <div class="about-text">
           <p>I love to get outside and play tennis or basketball. I also am an avid reader and like to catch a
@@ -267,7 +336,6 @@
 </footer>
 
 <script>
-  // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const navList = document.getElementById('nav-list');
   toggle.addEventListener('click', () => {
@@ -281,7 +349,6 @@
     });
   });
 
-  // Active-section highlighting in nav
   const sections = document.querySelectorAll('main .section');
   const navLinks = document.querySelectorAll('#nav-list a');
   const byHref = href => document.querySelector(`#nav-list a[href="${href}"]`);
