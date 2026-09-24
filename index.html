@@ -313,10 +313,10 @@
       <div class="section-head">
         <div class="eyebrow-line">
           <span class="eyebrow-tick" aria-hidden="true"></span>
-          <span>Technical Standard Operating Procedure</span>
+          <span>Technical SOP &amp; Subject Matter Guide</span>
         </div>
-        <h2>xTool F1 Ultra Automated Conveyor</h2>
-        <p class="section-sub">Hover or tap any step or bullet below to preview its mechanical motion, optical alignment, and software execution in the live monitor on the right.</p>
+        <h2>xTool Auto Streamline&trade; Conveyor</h2>
+        <p class="section-sub">Interactive mechanical integration, precision calibration, batch vision automation, and diagnostics calibrated to the official xTool Quick Start Guide. Hover over any step or citation badge to inspect physical dynamics.</p>
       </div>
 
       <!-- SPLIT INTERACTIVE STAGE LAYOUT -->
@@ -329,22 +329,34 @@
           <article class="sop-chapter">
             <header class="chapter-header">
               <span class="chapter-badge">Chapter 01</span>
-              <h3>Safety &amp; Operational Precautions</h3>
+              <h3>Safety &amp; Operational Baselines</h3>
             </header>
             <div class="chapter-content">
-              <p>High-speed galvo lasers paired with conveyor indexers introduce mechanical pinch hazards and optical radiation paths:</p>
+              <p>Operating a continuous auto-streamline conveyor involves strict adherence to optical enclosure thresholds and hand-clearance zones:</p>
               <ul class="sop-list">
-                <li class="interactive-item is-active" data-stage="c1-estop">
-                  <strong>E-Stop Accessibility:</strong> Maintain unhindered, rapid physical access to the red emergency stop button on the F1 Ultra chassis.
+                <li class="interactive-item is-active" data-stage="c1-enclosure">
+                  <strong>Enclosure Shield Height (&le; 5 mm):</strong> Pull down the protective enclosure until it rests no more than 5 mm above the material before running 
+                  <span class="cite-tag">
+                    <button type="button" class="cite-pill" aria-label="Citation">Doc: P.09-10</button>
+                    <span class="cite-card"><strong>Quick Start Guide: P. 09 &amp; 10</strong>"Pull down the protective enclosure until it remains no more than 5 mm above the material before processing."</span>
+                  </span>.
                 </li>
-                <li class="interactive-item" data-stage="c1-pinch">
-                  <strong>Pinch Point Awareness:</strong> Keep hands, cables, and tools clear of the drive rollers, idler drum, and belt edges during motor stepping.
+                <li class="interactive-item" data-stage="c1-estop">
+                  <strong>E-Stop Unobstructed Reach:</strong> Maintain unobstructed physical line-of-sight and immediate reach to the F1 Ultra red emergency stop mushroom button at all times.
                 </li>
-                <li class="interactive-item" data-stage="c1-optical">
-                  <strong>Optical Radiation Shielding:</strong> When operating open pass-through feeds, wear rated OD6+ safety glasses (1064 nm and 455 nm) and attach laser shields.
+                <li class="interactive-item" data-stage="c1-hand-safety">
+                  <strong>Active Processing Zone Safety:</strong> When placing materials during processing, keep hands away from the central laser processing area to avoid skin injuries
+                  <span class="cite-tag">
+                    <button type="button" class="cite-pill" aria-label="Citation">Doc: P.09</button>
+                    <span class="cite-card"><strong>Quick Start Guide: P. 09</strong>"When placing materials during processing, keep your hand away from the processing area to avoid skin injuries."</span>
+                  </span>.
                 </li>
-                <li class="interactive-item" data-stage="c1-clearance">
-                  <strong>Infeed/Outfeed Clearances:</strong> Provide at least 350 mm of clear staging at both ends to eliminate workpiece drop or binding.
+                <li class="interactive-item" data-stage="c1-overlap">
+                  <strong>Substrate Boundary Rule:</strong> Ensure all workpieces are identical and strictly do not touch or overlap with each other on the belt surface
+                  <span class="cite-tag">
+                    <button type="button" class="cite-pill" aria-label="Citation">Doc: P.09</button>
+                    <span class="cite-card"><strong>Quick Start Guide: P. 09</strong>"Ensure that you use identical materials... Ensure that the materials do not touch or overlap with each other."</span>
+                  </span>.
                 </li>
               </ul>
             </div>
@@ -354,30 +366,55 @@
           <article class="sop-chapter">
             <header class="chapter-header">
               <span class="chapter-badge">Chapter 02</span>
-              <h3>Hardware Docking &amp; Mechanical Alignment</h3>
+              <h3>Hardware Docking (F1 Ultra Fastening Kit)</h3>
             </header>
             <div class="chapter-content">
-              <p>Sub-millimeter batch accuracy begins with rigid, planar mechanical registration to the F1 Ultra datum surface:</p>
+              <p>The F1 Ultra utilizes a dedicated fastening kit distinct from the F2 Ultra 
+                <span class="cite-tag">
+                  <button type="button" class="cite-pill" aria-label="Citation">Doc: P.01</button>
+                  <span class="cite-card"><strong>Quick Start Guide: P. 01</strong>"xTool F1 Ultra fastening kit: Fastening piece A, Fastening piece B, Screw M4*10, Screwdriver 3 mm."</span>
+                </span>. Follow the 4-step mechanical docking sequence:
+              </p>
               <div class="sop-steps-grid">
-                <div class="sop-step-box interactive-item" data-stage="c2-clean">
+                <div class="sop-step-box interactive-item" data-stage="c2-pieceB">
                   <span class="step-num">Step 1</span>
-                  <h4>Clean Base</h4>
-                  <p>Power off the machine. Remove cutting slats and wipe bed clean of grit.</p>
+                  <h4>Mount Piece B</h4>
+                  <p>Fasten Piece B to conveyor using two M4*10 screws and 3 mm driver. Verify correct bracket orientation 
+                    <span class="cite-tag">
+                      <button type="button" class="cite-pill" aria-label="Citation">Doc: P.06</button>
+                      <span class="cite-card"><strong>Quick Start Guide: P. 06</strong>"Place fastening piece B in the correct direction. Fastening piece B, Screw M4*10, Screwdriver 3 mm."</span>
+                    </span>.
+                  </p>
                 </div>
-                <div class="sop-step-box interactive-item" data-stage="c2-seat">
+                <div class="sop-step-box interactive-item" data-stage="c2-pieceA">
                   <span class="step-num">Step 2</span>
-                  <h4>Seat Chassis</h4>
-                  <p>Lower conveyor frame into the base locating pins with zero axial rocking.</p>
+                  <h4>Mount Piece A</h4>
+                  <p>Attach Piece A to F1 Ultra base plate using two M4*10 screws and 3 mm driver 
+                    <span class="cite-tag">
+                      <button type="button" class="cite-pill" aria-label="Citation">Doc: P.07</button>
+                      <span class="cite-card"><strong>Quick Start Guide: P. 07</strong>"xTool F1 Ultra, Fastening piece A, Screw M4*10, Screwdriver 3 mm."</span>
+                    </span>.
+                  </p>
+                </div>
+                <div class="sop-step-box interactive-item" data-stage="c2-mate">
+                  <span class="step-num">Step 3</span>
+                  <h4>Align &amp; Join</h4>
+                  <p>Align the holes on Fastening Pieces A and B; secure together with two M4*10 screws 
+                    <span class="cite-tag">
+                      <button type="button" class="cite-pill" aria-label="Citation">Doc: P.07</button>
+                      <span class="cite-card"><strong>Quick Start Guide: P. 07</strong>"Align the holes on the two fastening pieces... Screw M4*10, Screwdriver 3 mm."</span>
+                    </span>.
+                  </p>
                 </div>
                 <div class="sop-step-box interactive-item" data-stage="c2-cable">
-                  <span class="step-num">Step 3</span>
-                  <h4>Bus Cable</h4>
-                  <p>Plug umbilical cord into the right interior expansion port and lock.</p>
-                </div>
-                <div class="sop-step-box interactive-item" data-stage="c2-tension">
                   <span class="step-num">Step 4</span>
-                  <h4>Check Tension</h4>
-                  <p>Verify 3–5 mm center span deflection; adjust end hex screws in 1/4 turns.</p>
+                  <h4>Cable Interface</h4>
+                  <p>Plug 90&deg; elbow connection cable between conveyor side port and F1 Ultra rear connector 
+                    <span class="cite-tag">
+                      <button type="button" class="cite-pill" aria-label="Citation">Doc: P.08</button>
+                      <span class="cite-card"><strong>Quick Start Guide: P. 08</strong>"Connection cable plugged into side of conveyor and peripheral port of F1 Ultra."</span>
+                    </span>.
+                  </p>
                 </div>
               </div>
             </div>
@@ -390,19 +427,19 @@
               <h3>Software Configuration (XCS)</h3>
             </header>
             <div class="chapter-content">
-              <p>Configure xTool Creative Space (XCS) to synchronize conveyor indexing pulses with the galvo mirror scanner:</p>
+              <p>Synchronize stepper motor index pulses with xTool Creative Space (XCS) to control workpiece progression:</p>
               <ol class="sop-ordered-list">
                 <li class="interactive-item" data-stage="c3-connect">
-                  Connect F1 Ultra via USB-C or Wi-Fi and verify the device card shows <strong>Connected</strong>.
+                  Connect F1 Ultra via USB-C or local Wi-Fi and verify the device dashboard indicates <strong>Connected</strong>.
                 </li>
                 <li class="interactive-item" data-stage="c3-settings">
-                  Open <strong>Device Settings (Gear Icon)</strong> adjacent to the F1 Ultra device card.
+                  Open <strong>Device Settings (Gear Icon)</strong> adjacent to the F1 Ultra device card in XCS.
                 </li>
                 <li class="interactive-item" data-stage="c3-mode">
-                  Under <strong>Working Mode</strong>, switch from <em>Regular Surface</em> to <strong>Conveyor</strong> (Auto-Stream or Long Material).
+                  Under <strong>Working Mode</strong>, switch from <em>Regular Surface</em> to <strong>Conveyor</strong> (select Auto-Stream or Long Material).
                 </li>
                 <li class="interactive-item" data-stage="c3-vector">
-                  Verify the on-screen feed vector arrows match physical part progression (rear infeed forward to front outfeed).
+                  Verify software feed vector orientation arrows match the physical conveyor flow (right-to-left material progression).
                 </li>
               </ol>
             </div>
@@ -412,19 +449,19 @@
           <article class="sop-chapter">
             <header class="chapter-header">
               <span class="chapter-badge">Chapter 04</span>
-              <h3>Optical &amp; Step-Distance Calibration</h3>
+              <h3>Step-Distance &amp; Optical Calibration</h3>
             </header>
             <div class="chapter-content">
-              <p>Calibrate hardware-to-software feed ratios to prevent longitudinal dimensional compression or stretching:</p>
+              <p>Calibrate hardware-to-software feed ratios to eliminate dimensional compression along the conveyor indexing axis:</p>
               <ol class="sop-ordered-list">
                 <li class="interactive-item" data-stage="c4-focus">
-                  Place scrap test stock onto the belt and focus using the automated dual-dot optical focus routine.
+                  Place flat test material onto the belt and focus using the automated dual-dot optical focus routine.
                 </li>
                 <li class="interactive-item" data-stage="c4-mark">
-                  Navigate to <strong>Settings &rarr; Accessory &rarr; Conveyor &rarr; Step Calibration</strong>. Fire the 100.00 mm benchmark line test.
+                  Navigate to <strong>Settings &rarr; Accessory &rarr; Conveyor &rarr; Step Calibration</strong>. Burn the standard 100.00 mm calibration marks.
                 </li>
                 <li class="interactive-item" data-stage="c4-measure">
-                  Measure distance between marks using digital calipers. Enter observed value into XCS to correct stepper multiplier.
+                  Measure the center-to-center distance using digital vernier calipers. Enter the observed value into XCS to auto-adjust the stepper scale.
                 </li>
               </ol>
 
@@ -451,22 +488,30 @@
           <article class="sop-chapter">
             <header class="chapter-header">
               <span class="chapter-badge">Chapter 05</span>
-              <h3>Automated Batch Processing &amp; Smart-Fill</h3>
+              <h3>Batch Processing &amp; Large Materials (&le; 500 mm)</h3>
             </header>
             <div class="chapter-content">
-              <p>Deploy computer-vision driven batch production across randomized blank placement:</p>
+              <p>The Auto Streamline&trade; Conveyor executes both discrete batch arrays and oversized continuous pass-through jobs:</p>
               <ul class="sop-list">
                 <li class="interactive-item" data-stage="c5-array">
-                  <strong>Stage Blanks:</strong> Arrange 5–15 workpieces on the belt with &ge;10 mm clearance to eliminate software overlap.
-                </li>
-                <li class="interactive-item" data-stage="c5-snapshot">
-                  <strong>Vision Snapshot:</strong> Click <strong>Camera Refresh</strong> to capture live part positions with the overhead sensor.
+                  <strong>Batch Staging:</strong> Scatter identical blanks on the belt without contact or overlap
+                  <span class="cite-tag">
+                    <button type="button" class="cite-pill" aria-label="Citation">Doc: P.09</button>
+                    <span class="cite-card"><strong>Quick Start Guide: P. 09</strong>"Ensure that you use identical materials... Ensure that the materials do not touch or overlap with each other."</span>
+                  </span>.
                 </li>
                 <li class="interactive-item" data-stage="c5-smartfill">
-                  <strong>Smart-Fill Match:</strong> Position artwork on master part; click <strong>Smart Fill</strong> to duplicate across all detected blanks.
+                  <strong>Smart-Fill Matching:</strong> Position artwork on master part; click <strong>Smart Fill</strong> to duplicate across all detected blanks automatically.
                 </li>
-                <li class="interactive-item" data-stage="c5-process">
-                  <strong>Automated Run:</strong> Press <strong>Process &rarr; Start</strong> to execute marking, auto-indexing, and continuous part ejection.
+                <li class="interactive-item" data-stage="c5-large">
+                  <strong>Large Materials (&le; 500 mm) Central Line Rule:</strong> When processing large materials up to 500 mm, laser beams are directed solely onto the conveyor central line. Any portion of material to the left of this line will not be processed 
+                  <span class="cite-tag">
+                    <button type="button" class="cite-pill" aria-label="Citation">Doc: P.10</button>
+                    <span class="cite-card"><strong>Quick Start Guide: P. 10</strong>"When processing large materials, the device directs laser beams solely onto the central line of the conveyor... any portion to the left of this central line will not be processed."</span>
+                  </span>.
+                </li>
+                <li class="interactive-item" data-stage="c5-continuous">
+                  <strong>Continuous Processing:</strong> Click <strong>Process &rarr; Start</strong> to execute marking, auto-indexing, and continuous part ejection.
                 </li>
               </ul>
             </div>
@@ -478,8 +523,8 @@
         <aside class="sop-stage-col" aria-label="Interactive Visual Stage">
           <div class="stage-monitor">
             <div class="stage-top-bar">
-              <span class="stage-title" id="stageModeTitle">E-STOP CLEARANCE</span>
-              <span class="stage-status" id="stageModeStatus">SAFETY ENFORCED</span>
+              <span class="stage-title" id="stageModeTitle">ENCLOSURE SHIELD CLEARANCE</span>
+              <span class="stage-status" id="stageModeStatus">SAFETY INTERLOCK: &le; 5 mm</span>
             </div>
             
             <div class="stage-canvas-area" id="stageCanvas">
@@ -487,8 +532,8 @@
             </div>
 
             <div class="stage-caption-bar">
-              <p class="stage-caption-title" id="stageCaptionTitle">Emergency Stop Button Access</p>
-              <p class="stage-caption-desc" id="stageCaptionDesc">The operator stands directly in front of the staging area, maintaining a 360° unobstructed line-of-sight and immediate physical reach to the red E-Stop mushroom button atop the F1 Ultra chassis.</p>
+              <p class="stage-caption-title" id="stageCaptionTitle">Protective Enclosure Height Regulation</p>
+              <p class="stage-caption-desc" id="stageCaptionDesc">Per manufacturer guidelines (Quick Start Guide P. 09 &amp; 10), pull down the protective enclosure until it rests no more than 5 mm above the material surface prior to commencing any laser operation.</p>
             </div>
           </div>
         </aside>
@@ -503,7 +548,7 @@
             <span>Operator Knowledge Verification</span>
           </div>
           <h3>Conveyor Diagnostic &amp; Troubleshooting Assessment</h3>
-          <p class="section-sub">Test your operational problem-solving skills across belt tracking, dimensional scaling, and vision detection.</p>
+          <p class="section-sub">Test your operational problem-solving skills across hardware mounting, enclosure clearance, and large material processing rules.</p>
         </div>
 
         <div id="quizContainer" class="quiz-container"></div>
@@ -563,7 +608,7 @@
 </footer>
 
 <script>
-  // Mobile Nav Toggle
+  // Mobile Navigation Toggle
   const toggle = document.querySelector('.nav-toggle');
   const navList = document.getElementById('nav-list');
   toggle.addEventListener('click', () => {
@@ -598,6 +643,29 @@
   // Interactive Stage Scene Generator
   // ==========================================================
   const stageScenes = {
+    'c1-enclosure': {
+      title: 'ENCLOSURE SHIELD CLEARANCE',
+      status: 'SAFETY INTERLOCK: ≤ 5 mm [DOC P.09]',
+      captionTitle: 'Protective Enclosure Height Regulation',
+      captionDesc: 'Per manufacturer guidelines (Quick Start Guide P. 09 & 10), pull down the protective enclosure until it rests no more than 5 mm above the material surface prior to commencing any laser operation.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="40" y="160" width="300" height="30" rx="3" fill="#161f2a" stroke="#2c3b4a" stroke-width="2"/>
+          <rect x="130" y="145" width="120" height="15" rx="2" fill="#2c3b4a" stroke="#f2a93b"/>
+          <text x="190" y="156" fill="#e7ecf1" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Material Substrate</text>
+          <!-- Moving Enclosure Shield -->
+          <g style="animation: lowerShield5mm 3s infinite ease-in-out;">
+            <rect x="100" y="20" width="180" height="120" fill="none" stroke="#6fb2dd" stroke-width="2.5" rx="4"/>
+            <rect x="100" y="136" width="180" height="4" fill="#6fb2dd"/>
+            <line x1="285" y1="140" x2="285" y2="145" stroke="#ef4444" stroke-width="2"/>
+            <line x1="280" y1="140" x2="290" y2="140" stroke="#ef4444" stroke-width="1.5"/>
+            <line x1="280" y1="145" x2="290" y2="145" stroke="#ef4444" stroke-width="1.5"/>
+            <text x="312" y="145" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="700">≤ 5 mm</text>
+          </g>
+          <text x="190" y="235" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Shield gap strictly capped at ≤ 5 mm</text>
+        </svg>
+      `
+    },
     'c1-estop': {
       title: 'E-STOP CLEARANCE',
       status: 'SAFETY INTERLOCK ARMED',
@@ -608,11 +676,9 @@
           <rect x="30" y="70" width="320" height="150" rx="8" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
           <rect x="55" y="115" width="270" height="60" rx="4" fill="#0f161f" stroke="#2c3b4a"/>
           <line x1="55" y1="145" x2="325" y2="145" stroke="#f2a93b" stroke-dasharray="8 6" stroke-width="2"/>
-          <!-- E-Stop Enclosure -->
           <circle cx="310" cy="95" r="18" fill="#2c3b4a" stroke="#ef4444" stroke-width="2"/>
           <circle cx="310" cy="95" r="13" class="estop-btn" style="animation: pulseEStop 1.8s infinite ease-in-out;"/>
           <text x="310" y="99" fill="#fff" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">STOP</text>
-          <!-- Reach Zone & Operator Hand Indicator -->
           <circle cx="310" cy="95" r="35" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
           <g style="animation: reachHand 2.4s infinite ease-in-out;">
             <path d="M 335 155 Q 320 125 312 108" fill="none" stroke="#6fb2dd" stroke-width="3.5" stroke-linecap="round"/>
@@ -622,147 +688,128 @@
         </svg>
       `
     },
-    'c1-pinch': {
-      title: 'PINCH HAZARDS',
-      status: 'MECHANICAL ROTATION GUARDED',
-      captionTitle: 'Drive Drum & Roller Boundaries',
-      captionDesc: 'Infeed and outfeed drums feature high-torque pinch points during stepper index sequences. Hands and loose cables must maintain a 50 mm clearance perimeter.',
+    'c1-hand-safety': {
+      title: 'ACTIVE HAZARD ZONE',
+      status: 'HANDS CLEAR OF LASER [DOC P.09]',
+      captionTitle: 'Keep Hands Away During Processing',
+      captionDesc: 'Official warning (P. 09): Keep hands completely clear of the central laser processing area while the machine is actively indexing and marking to prevent severe skin burns.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
-          <rect x="40" y="100" width="300" height="80" rx="6" fill="#161f2a" stroke="#2c3b4a"/>
-          <!-- Drive Rollers -->
-          <circle cx="65" cy="140" r="28" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
-          <circle cx="315" cy="140" r="28" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
-          <!-- Belt loop -->
-          <rect x="65" y="112" width="250" height="56" fill="#0f161f" stroke="#2c3b4a"/>
-          <!-- Hazard Warning Zones -->
-          <circle cx="65" cy="140" r="38" fill="none" stroke="#f87171" stroke-dasharray="5 4" stroke-width="2"/>
-          <circle cx="315" cy="140" r="38" fill="none" stroke="#f87171" stroke-dasharray="5 4" stroke-width="2"/>
-          <text x="65" y="144" fill="#f87171" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">PINCH</text>
-          <text x="315" y="144" fill="#f87171" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">PINCH</text>
-          <!-- Direction arrows -->
-          <path d="M 65 102 A 38 38 0 0 1 95 125" fill="none" stroke="#f2a93b" stroke-width="2" marker-end="url(#arrow)"/>
-          <text x="190" y="240" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Zero-touch perimeter around active drum rollers</text>
-        </svg>
-      `
-    },
-    'c1-optical': {
-      title: 'RADIATION ENCLOSURE',
-      status: 'OD6+ FILTER ACTIVE',
-      captionTitle: 'Optical Shielding & Eye Safety',
-      captionDesc: 'When the conveyor feeds extended stock beyond the physical lid, operators must wear dual-wavelength protective eyewear rated for 1064 nm (Fiber) and 455 nm (Diode).',
-      svg: `
-        <svg class="stage-svg" viewBox="0 0 380 280">
-          <rect x="50" y="50" width="280" height="180" rx="8" fill="#161f2a" stroke="#2c3b4a" stroke-width="2"/>
-          <!-- Galvo Head -->
-          <rect x="150" y="65" width="80" height="40" rx="3" fill="#1b2530" stroke="#6fb2dd"/>
-          <!-- Dual Laser Beam -->
-          <polygon points="190,105 130,210 250,210" fill="url(#laserCone)" opacity="0.45" style="animation: pulseLaser 1.6s infinite ease-in-out;"/>
-          <line x1="190" y1="105" x2="190" y2="210" stroke="#f2a93b" stroke-width="2"/>
-          <!-- Eye wear icon -->
-          <rect x="75" y="80" width="50" height="24" rx="6" fill="#0f161f" stroke="#4ade80" stroke-width="2"/>
-          <text x="100" y="96" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">OD6+</text>
-          <text x="190" y="245" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">1064 nm &amp; 455 nm Shielding Active</text>
-        </svg>
-      `
-    },
-    'c1-clearance': {
-      title: 'TRAVEL CLEARANCE',
-      status: '350mm CLEAR ZONE VERIFIED',
-      captionTitle: 'Infeed & Outfeed Workpiece Travel',
-      captionDesc: 'Maintaining at least 350 mm on both sides prevents heavy or long items from pitching downward, binding on entry, or falling onto factory floors.',
-      svg: `
-        <svg class="stage-svg" viewBox="0 0 380 280">
-          <rect x="110" y="110" width="160" height="60" rx="4" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
-          <!-- Infeed clear span -->
-          <rect x="20" y="125" width="80" height="30" fill="none" stroke="#6fb2dd" stroke-dasharray="4 3"/>
-          <line x1="20" y1="170" x2="100" y2="170" stroke="#6fb2dd" stroke-width="1.5"/>
-          <text x="60" y="185" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">&gt; 350 mm</text>
-          <!-- Outfeed clear span -->
-          <rect x="280" y="125" width="80" height="30" fill="none" stroke="#6fb2dd" stroke-dasharray="4 3"/>
-          <line x1="280" y1="170" x2="360" y2="170" stroke="#6fb2dd" stroke-width="1.5"/>
-          <text x="320" y="185" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">&gt; 350 mm</text>
-          <text x="190" y="235" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Unobstructed infeed/outfeed runout planes</text>
-        </svg>
-      `
-    },
-    'c2-clean': {
-      title: 'BASE PREPARATION',
-      status: 'BED PURGED',
-      captionTitle: 'Purging Slats & Debris',
-      captionDesc: 'Remove standard cutting slats, honeycombs, and particulate debris so the conveyor frame rests directly on the machine floor pins.',
-      svg: `
-        <svg class="stage-svg" viewBox="0 0 380 280">
-          <rect x="50" y="80" width="280" height="130" rx="4" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
-          <line x1="90" y1="145" x2="290" y2="145" stroke="#2c3b4a" stroke-width="3"/>
-          <!-- Cleaning cloth path -->
-          <rect x="140" y="120" width="50" height="35" rx="4" fill="#6fb2dd" opacity="0.6">
-            <animate attributeName="x" values="90;240;90" dur="2.5s" repeatCount="indefinite"/>
-          </rect>
-          <text x="190" y="245" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Flat, grit-free datum bed ensures zero tilt</text>
-        </svg>
-      `
-    },
-    'c2-seat': {
-      title: 'CHASSIS DOCKING',
-      status: 'DATUM PIN ALIGNMENT',
-      captionTitle: 'Vertical Insertion & Locating Pins',
-      captionDesc: 'Operator lowers the conveyor unit straight down. Two hardened locator pins snap cleanly into the F1 Ultra receiver sockets without binding.',
-      svg: `
-        <svg class="stage-svg" viewBox="0 0 380 280">
-          <!-- Base receiver -->
-          <rect x="60" y="170" width="260" height="40" rx="4" fill="#111822" stroke="#2c3b4a" stroke-width="2"/>
-          <circle cx="100" cy="180" r="7" fill="#0f161f" stroke="#f2a93b" stroke-width="2"/>
-          <circle cx="280" cy="180" r="7" fill="#0f161f" stroke="#f2a93b" stroke-width="2"/>
-          <!-- Conveyor Body dropping down -->
-          <g style="animation: lowerChassis 3s infinite ease-in-out;">
-            <rect x="80" y="100" width="220" height="55" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
-            <rect x="98" y="155" width="5" height="14" fill="#f2a93b"/>
-            <rect x="278" y="155" width="5" height="14" fill="#f2a93b"/>
-            <!-- Alignment arrow -->
-            <path d="M 190 60 L 190 90 M 184 82 L 190 90 L 196 82" stroke="#6fb2dd" stroke-width="2.5" fill="none"/>
+          <rect x="40" y="80" width="300" height="120" rx="4" fill="#1b2530" stroke="#2c3b4a"/>
+          <rect x="130" y="80" width="120" height="120" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-dasharray="4 4"/>
+          <polygon points="190,30 150,140 230,140" fill="url(#laserCone)" opacity="0.6"/>
+          <!-- Hand outside warning -->
+          <g transform="translate(60, 110)">
+            <circle cx="20" cy="20" r="18" fill="#111822" stroke="#4ade80" stroke-width="2"/>
+            <text x="20" y="24" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">SAFE</text>
           </g>
-          <text x="190" y="245" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Vertical seating into dual datum pins</text>
+          <text x="190" y="185" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">RESTRICTED PROCESSING AREA</text>
+          <text x="190" y="240" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Keep hands outside red boundary during cycle</text>
+        </svg>
+      `
+    },
+    'c1-overlap': {
+      title: 'NON-OVERLAP VERIFICATION',
+      status: 'PARTS SEPARATED [DOC P.09]',
+      captionTitle: 'Workpiece Separation Rule',
+      captionDesc: 'P. 09 states: Materials must be identical and must not touch or overlap. Overlapping causes focal height defocusing, image distortion, and potential belt jams.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <!-- Conveyor surface -->
+          <rect x="40" y="100" width="300" height="80" rx="4" fill="#161f2a" stroke="#2c3b4a"/>
+          <!-- Non-overlapping parts (Correct) -->
+          <rect x="60" y="125" width="45" height="30" rx="2" fill="#1b2530" stroke="#4ade80" stroke-width="2"/>
+          <rect x="120" y="125" width="45" height="30" rx="2" fill="#1b2530" stroke="#4ade80" stroke-width="2"/>
+          <circle cx="112" cy="140" r="8" fill="#111822" stroke="#4ade80"/>
+          <text x="112" y="144" fill="#4ade80" font-size="10" text-anchor="middle">✓</text>
+          <!-- Overlapping parts (Incorrect) -->
+          <rect x="220" y="125" width="45" height="30" rx="2" fill="#1b2530" stroke="#ef4444" stroke-width="1.5"/>
+          <rect x="245" y="120" width="45" height="30" rx="2" fill="#1b2530" stroke="#ef4444" stroke-width="1.5" transform="rotate(8 245 120)"/>
+          <circle cx="280" cy="115" r="8" fill="#111822" stroke="#ef4444"/>
+          <text x="280" y="119" fill="#ef4444" font-size="10" text-anchor="middle">✕</text>
+          <text x="190" y="235" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Spacing &gt; 0 mm: Never touch or overlap</text>
+        </svg>
+      `
+    },
+    'c2-pieceB': {
+      title: 'FASTENING PIECE B',
+      status: 'M4*10 SCREWS & 3mm DRIVER [DOC P.06]',
+      captionTitle: 'Conveyor Bracket Direction Alignment',
+      captionDesc: 'Per Page 06: Mount Fastening Piece B onto the conveyor edge using two M4*10 screws and the 3 mm screwdriver. Note the callout: Ensure Piece B is oriented in the correct direction.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <!-- Conveyor Edge -->
+          <rect x="40" y="130" width="300" height="50" rx="3" fill="#161f2a" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="190" y="160" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">xTool Auto Streamline Conveyor Edge</text>
+          <!-- Fastening Piece B mounting down -->
+          <g style="animation: screwDrive 2.8s infinite ease-in-out;">
+            <rect x="140" y="90" width="100" height="24" rx="3" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+            <circle cx="155" cy="102" r="4" fill="#0f161f" stroke="#f2a93b"/>
+            <circle cx="225" cy="102" r="4" fill="#0f161f" stroke="#f2a93b"/>
+            <line x1="155" y1="70" x2="155" y2="90" stroke="#6fb2dd" stroke-width="2"/>
+            <line x1="225" y1="70" x2="225" y2="90" stroke="#6fb2dd" stroke-width="2"/>
+          </g>
+          <!-- Screwdriver icon -->
+          <rect x="250" y="55" width="60" height="10" rx="2" fill="#6fb2dd" transform="rotate(45 250 55)"/>
+          <text x="190" y="235" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Orientation matters: Notch facing outward</text>
+        </svg>
+      `
+    },
+    'c2-pieceA': {
+      title: 'FASTENING PIECE A',
+      status: 'M4*10 SCREWS & 3mm DRIVER [DOC P.07]',
+      captionTitle: 'F1 Ultra Machine Floor Registration',
+      captionDesc: 'Per Page 07: Fasten Piece A to the front edge of the F1 Ultra chassis using two M4*10 screws and the 3 mm screwdriver.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <!-- F1 Ultra base -->
+          <rect x="70" y="50" width="240" height="130" rx="4" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="190" y="90" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">xTool F1 Ultra Base Interior</text>
+          <!-- Fastening Piece A -->
+          <rect x="120" y="150" width="140" height="26" rx="3" fill="#111822" stroke="#f2a93b" stroke-width="2"/>
+          <circle cx="140" cy="163" r="5" fill="#f2a93b"/>
+          <circle cx="240" cy="163" r="5" fill="#f2a93b"/>
+          <text x="190" y="167" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Fastening Piece A</text>
+          <text x="190" y="235" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Two M4*10 screws torqued with 3 mm driver</text>
+        </svg>
+      `
+    },
+    'c2-mate': {
+      title: 'BRACKET MATING',
+      status: 'PIECES A + B JOINED [DOC P.07]',
+      captionTitle: 'Align Holes on Both Pieces',
+      captionDesc: 'Per Page 07: Slide the conveyor up to the F1 Ultra, align the through-holes on Fastening Pieces A and B, and secure them with two M4*10 screws.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <g style="animation: lowerChassis 2.6s infinite ease-in-out;">
+            <rect x="80" y="110" width="110" height="35" rx="3" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+            <text x="135" y="132" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Piece B</text>
+            <rect x="190" y="110" width="110" height="35" rx="3" fill="#111822" stroke="#6fb2dd" stroke-width="2"/>
+            <text x="245" y="132" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Piece A</text>
+            <!-- Alignment arrows -->
+            <line x1="165" y1="80" x2="165" y2="105" stroke="#4ade80" stroke-width="2"/>
+            <line x1="215" y1="80" x2="215" y2="105" stroke="#4ade80" stroke-width="2"/>
+          </g>
+          <text x="190" y="235" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Zero axial play between conveyor &amp; chassis</text>
         </svg>
       `
     },
     'c2-cable': {
-      title: 'BUS INTERFACE',
-      status: 'EXPANSION PORT LOCKED',
-      captionTitle: 'Umbilical Multi-Pin Bus Connection',
-      captionDesc: 'The shielded umbilical cable provides motor power, encoder feedback, and shutter sync signals from the interior galvo board.',
+      title: 'CONNECTION CABLE',
+      status: 'RIGHT-ANGLE UMBILICAL [DOC P.08]',
+      captionTitle: 'Peripheral Cable Bus Routing',
+      captionDesc: 'Per Page 08: Route the connection cable with right-angle molded connectors between the conveyor lateral socket and the F1 Ultra rear communication port.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="50" y="90" width="120" height="90" rx="4" fill="#161f2a" stroke="#2c3b4a"/>
-          <text x="110" y="140" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">Conveyor</text>
+          <text x="110" y="140" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">Conveyor Port</text>
           <rect x="250" y="70" width="90" height="130" rx="4" fill="#1b2530" stroke="#2c3b4a"/>
-          <text x="295" y="140" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">F1 Wall</text>
-          <!-- Cable Routing -->
-          <path d="M 170 140 C 200 140, 220 120, 248 120" fill="none" stroke="#f2a93b" stroke-width="4"/>
-          <rect x="240" y="112" width="12" height="16" fill="#f2a93b" rx="2"/>
-          <circle cx="246" cy="120" r="2" fill="#111822"/>
-          <text x="190" y="235" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Hardware Bus: Data &amp; Power Linked</text>
-        </svg>
-      `
-    },
-    'c2-tension': {
-      title: 'TENSION & TRACKING',
-      status: 'DEFLECTION: 3.5 mm OK',
-      captionTitle: 'Belt Deflection & Hex Tuning',
-      captionDesc: 'Pressing firmly at mid-span should yield 3–5 mm of play. Adjusting left or right hex tension bolts in 1/4 turns re-centers tracking drift.',
-      svg: `
-        <svg class="stage-svg" viewBox="0 0 380 280">
-          <!-- Belt Side View -->
-          <line x1="60" y1="130" x2="320" y2="130" stroke="#2c3b4a" stroke-width="4"/>
-          <!-- Deflection curve animated -->
-          <path d="M 60 130 Q 190 155 320 130" fill="none" stroke="#f2a93b" stroke-width="3"/>
-          <!-- Gauge measurement -->
-          <line x1="190" y1="130" x2="190" y2="155" stroke="#6fb2dd" stroke-width="2"/>
-          <text x="210" y="147" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="10">3–5 mm</text>
-          <!-- Hex key adjusters -->
-          <rect x="45" y="122" width="14" height="16" fill="#1b2530" stroke="#f2a93b"/>
-          <rect x="321" y="122" width="14" height="16" fill="#1b2530" stroke="#f2a93b"/>
-          <text x="190" y="235" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Balanced torque prevents lateral belt creep</text>
+          <text x="295" y="140" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">F1 Ultra Bus</text>
+          <!-- Right angle cable -->
+          <path d="M 170 140 H 210 V 105 H 248" fill="none" stroke="#f2a93b" stroke-width="4"/>
+          <rect x="165" y="134" width="8" height="12" fill="#6fb2dd"/>
+          <rect x="242" y="99" width="10" height="12" fill="#6fb2dd"/>
+          <text x="190" y="235" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Firmware telemetry &amp; stepper sync active</text>
         </svg>
       `
     },
@@ -822,18 +869,17 @@
     },
     'c3-vector': {
       title: 'FEED VECTOR DIRECTION',
-      status: 'REAR-TO-FRONT DIRECTION',
-      captionTitle: 'Conveyor Feed Direction Mapping',
-      captionDesc: 'XCS software coordinate frames match physical conveyor transport vectors, preventing reverse index collisions.',
+      status: 'RIGHT-TO-LEFT FEED [DOC P.10]',
+      captionTitle: 'Material Feed Progression',
+      captionDesc: 'Quick Start Guide Page 10 notes material feeds from right to left. The laser aligns to the central position as the workpiece enters.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="70" y="100" width="240" height="70" rx="4" fill="#1b2530" stroke="#2c3b4a"/>
-          <!-- Animated flow arrow -->
-          <line x1="100" y1="135" x2="270" y2="135" stroke="#f2a93b" stroke-width="4" stroke-dasharray="8 6" style="animation: feedBelt 1.5s infinite linear;"/>
-          <polygon points="275,135 260,127 260,143" fill="#f2a93b"/>
-          <text x="100" y="90" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="9">INSPECTION / INTAKE</text>
-          <text x="280" y="90" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="end">EJECTION</text>
-          <text x="190" y="235" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Physical direction aligned with workspace</text>
+          <line x1="270" y1="135" x2="100" y2="135" stroke="#f2a93b" stroke-width="4" stroke-dasharray="8 6" style="animation: feedBelt 1.5s infinite linear;"/>
+          <polygon points="95,135 110,127 110,143" fill="#f2a93b"/>
+          <text x="270" y="88" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="end">RIGHT (INTAKE)</text>
+          <text x="100" y="88" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="9">LEFT (EJECTION)</text>
+          <text x="190" y="235" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Conveyor progression vector verified</text>
         </svg>
       `
     },
@@ -845,7 +891,6 @@
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="60" y="180" width="260" height="20" fill="#1b2530" stroke="#2c3b4a"/>
-          <!-- Red focus beams converging -->
           <line x1="140" y1="70" x2="190" y2="180" stroke="#ef4444" stroke-width="2"/>
           <line x1="240" y1="70" x2="190" y2="180" stroke="#ef4444" stroke-width="2"/>
           <circle cx="190" cy="180" r="4" fill="#ef4444" style="animation: pulseEStop 1.5s infinite ease-in-out;"/>
@@ -862,10 +907,8 @@
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="80" y="90" width="220" height="90" rx="3" fill="#1b2530" stroke="#2c3b4a"/>
-          <!-- Line 1 and Line 2 -->
           <line x1="120" y1="105" x2="120" y2="165" stroke="#f2a93b" stroke-width="3"/>
           <line x1="260" y1="105" x2="260" y2="165" stroke="#f2a93b" stroke-width="3"/>
-          <!-- Distance callout -->
           <line x1="120" y1="135" x2="260" y2="135" stroke="#6fb2dd" stroke-width="1.5" stroke-dasharray="3 3"/>
           <text x="190" y="128" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">Nominal: 100.00 mm</text>
           <text x="190" y="240" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Two-point stepper feed verification</text>
@@ -879,11 +922,9 @@
       captionDesc: 'Measure line spacing with digital calipers. Any difference against 100.00 mm calculates the new stepper correction multiplier.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
-          <!-- Caliper jaws -->
           <rect x="110" y="70" width="16" height="110" fill="#93a4b4" rx="2"/>
           <rect x="254" y="70" width="16" height="110" fill="#93a4b4" rx="2"/>
           <rect x="110" y="60" width="160" height="20" fill="#2c3b4a"/>
-          <!-- Digital readout -->
           <rect x="170" y="55" width="60" height="24" fill="#111822" stroke="#6fb2dd"/>
           <text x="200" y="71" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">98.40</text>
           <text x="190" y="240" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Scale Factor = 100.00 / Measured Length</text>
@@ -891,36 +932,18 @@
       `
     },
     'c5-array': {
-      title: 'BATCH STAGING',
-      status: 'SPACING &gt; 10 mm CONFIRMED',
-      captionTitle: 'Workpiece Blank Distribution',
-      captionDesc: 'Blanks can be loaded in an staggered layout. Maintaining 10 mm separation prevents computer-vision bounding-box collisions.',
+      title: 'BATCH ARRAY STAGING',
+      status: 'IDENTICAL MATERIALS [DOC P.09]',
+      captionTitle: 'Batch Part Placement Rules',
+      captionDesc: 'Per Page 09: Ensure materials are identical and never touch or overlap. Staggered placement allows XCS to detect perimeters reliably.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="40" y="90" width="300" height="90" rx="4" fill="#161f2a" stroke="#2c3b4a"/>
-          <!-- 4 tags staggered -->
           <rect x="70" y="110" width="40" height="25" rx="2" fill="#1b2530" stroke="#f2a93b"/>
           <rect x="140" y="135" width="40" height="25" rx="2" fill="#1b2530" stroke="#f2a93b"/>
           <rect x="210" y="110" width="40" height="25" rx="2" fill="#1b2530" stroke="#f2a93b"/>
           <rect x="275" y="130" width="40" height="25" rx="2" fill="#1b2530" stroke="#f2a93b"/>
-          <text x="190" y="240" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Separation prevents contour overlap</text>
-        </svg>
-      `
-    },
-    'c5-snapshot': {
-      title: 'VISION RECOGNITION',
-      status: 'IMAGE SENSOR REFRESHED',
-      captionTitle: 'Overhead Camera Snapshot',
-      captionDesc: 'The wide-angle 16MP overhead camera scans the staging plane and generates a high-contrast distortion-corrected background.',
-      svg: `
-        <svg class="stage-svg" viewBox="0 0 380 280">
-          <rect x="50" y="80" width="280" height="120" rx="4" fill="#111822" stroke="#2c3b4a"/>
-          <!-- Camera lens icon -->
-          <circle cx="190" cy="50" r="15" fill="#1b2530" stroke="#6fb2dd" stroke-width="2"/>
-          <circle cx="190" cy="50" r="6" fill="#6fb2dd"/>
-          <!-- Scanning beam line -->
-          <line x1="60" y1="140" x2="320" y2="140" stroke="#6fb2dd" stroke-width="2" opacity="0.8" style="animation: camScan 2s infinite ease-in-out;"/>
-          <text x="190" y="240" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Image captured for shape segmentation</text>
+          <text x="190" y="240" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Identical parts staged with zero touch/overlap</text>
         </svg>
       `
     },
@@ -928,11 +951,10 @@
       title: 'ALGORITHM MAPPING',
       status: 'BOUNDING BOXES REGISTERED',
       captionTitle: 'Smart-Fill Pattern Distribution',
-      captionDesc: 'Edge-detection algorithms calculate centroid positions and rotational angles, automatically replicating artwork across all parts.',
+      captionDesc: 'Edge-detection algorithms calculate centroid positions and rotational angles, automatically replicating artwork across all detected blanks.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="40" y="90" width="300" height="90" rx="4" fill="#161f2a" stroke="#2c3b4a"/>
-          <!-- Tags with bounding boxes -->
           <g style="animation: popBox 0.8s ease forwards;">
             <rect x="70" y="115" width="45" height="30" fill="#1b2530" stroke="#4ade80" stroke-width="1.5"/>
             <circle cx="92" cy="130" r="4" fill="#4ade80"/>
@@ -949,19 +971,38 @@
         </svg>
       `
     },
-    'c5-process': {
-      title: 'CONTINUOUS FEED',
-      status: 'ENGRAVE &amp; EJECT CYCLE ACTIVE',
+    'c5-large': {
+      title: 'LARGE MATERIALS (≤ 500 mm)',
+      status: 'CENTRAL LINE RESTRICTION [DOC P.10]',
+      captionTitle: '500 mm Central Line Rule',
+      captionDesc: 'Page 10 states: Laser beams are directed solely onto the central line. As material moves right to left, any portion to the left of this central line will NOT be processed.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <!-- 500mm material bar -->
+          <rect x="40" y="120" width="300" height="40" rx="3" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="190" y="110" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle">&lt; 500 mm Substrate Span</text>
+          <!-- Processing position line -->
+          <line x1="190" y1="70" x2="190" y2="185" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <text x="190" y="65" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">CENTRAL LINE</text>
+          <!-- Left side unprocessable indicator -->
+          <rect x="40" y="120" width="150" height="40" fill="rgba(239, 68, 68, 0.2)"/>
+          <text x="115" y="145" fill="#fca5a5" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Left: Unprocessed</text>
+          <text x="260" y="145" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Right: Infeed</text>
+          <text x="190" y="240" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Laser directs solely onto center position</text>
+        </svg>
+      `
+    },
+    'c5-continuous': {
+      title: 'CONTINUOUS RUN',
+      status: 'BATCH INDEXING ACTIVE',
       captionTitle: 'Automated Continuous Marking',
       captionDesc: 'The galvo scans all parts within view, feeds the conveyor forward by the batch pitch, and resumes marking without manual intervention.',
       svg: `
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="40" y="90" width="300" height="85" rx="4" fill="#161f2a" stroke="#2c3b4a"/>
-          <!-- Active Galvo beam over tag -->
           <rect x="90" y="115" width="45" height="30" fill="#1b2530" stroke="#f2a93b"/>
           <polygon points="112,50 95,115 130,115" fill="url(#laserCone)" opacity="0.6"/>
           <circle cx="112" cy="120" r="3" fill="#f2a93b" style="animation: pulseLaser 0.6s infinite;"/>
-          <!-- Outfeed part dropping into bin -->
           <rect x="280" y="120" width="40" height="26" fill="#1b2530" stroke="#6fb2dd" transform="rotate(15 280 120)"/>
           <text x="190" y="240" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Continuous Index &amp; Ejection Underway</text>
         </svg>
@@ -969,7 +1010,7 @@
     }
   };
 
-  // Add reusable SVG gradient definition once
+  // Reusable SVG gradient
   const svgDefs = `
     <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
       <defs>
@@ -999,7 +1040,7 @@
     stageCaptionDesc.textContent = scene.captionDesc;
   }
 
-  // Bind hover and focus triggers to every interactive item
+  // Bind hover and click triggers to all items with data-stage
   const interactiveItems = document.querySelectorAll('.interactive-item[data-stage]');
   interactiveItems.forEach(item => {
     const handleTrigger = () => {
@@ -1014,7 +1055,7 @@
   });
 
   // Default initial scene
-  updateStageScene('c1-estop');
+  updateStageScene('c1-enclosure');
 
   // ==========================================================
   // Calibration Calculator Tool
@@ -1042,48 +1083,48 @@
   }
 
   // ==========================================================
-  // Conveyor Diagnostic Quiz Engine
+  // Conveyor Diagnostic Quiz Engine (Updated with Quick Start Specs)
   // ==========================================================
   const quizData = [
     {
-      question: "Scenario 1: You engrave a 50 mm × 50 mm square onto anodized tags. Digital calipers show the lateral width is 50.02 mm, but the longitudinal feed length is 45.80 mm. What is the root cause?",
+      question: "Scenario 1: According to the official xTool Quick Start Guide, how far above the material must you pull down the protective enclosure before processing?",
       options: [
-        { text: "Focal length is misaligned; re-run the dual-dot auto-focus routine.", correct: false },
-        { text: "Galvo laser marking speed is set too high in XCS.", correct: false },
-        { text: "Conveyor step calibration multiplier is incorrect; run the 100 mm calibration routine.", correct: true },
-        { text: "The umbilical bus cable is loose and dropping data packets.", correct: false }
+        { text: "Exactly 15 mm to 20 mm to allow smoke exhaust flow.", correct: false },
+        { text: "No more than 5 mm above the material surface.", correct: true },
+        { text: "Flush with the top surface of the conveyor idler rollers.", correct: false },
+        { text: "Leave it fully raised when running continuous batch mode.", correct: false }
       ],
-      explanation: "Lateral dimensions are steered exclusively by the galvo mirrors, while longitudinal dimensions depend on stepper pulses. A feed discrepancy indicates the step calibration multiplier requires adjustment."
+      explanation: "Quick Start Guide Pages 09 and 10 state: 'Pull down the protective enclosure until it remains no more than 5 mm above the material before processing.'"
     },
     {
-      question: "Scenario 2: During a 30-minute continuous run, the conveyor belt tracks toward the left rail and rubs against the chassis wall. What is the proper mechanical procedure?",
+      question: "Scenario 2: Which fastening kit components must be used to mount the conveyor onto the xTool F1 Ultra chassis?",
       options: [
-        { text: "Apply silicone grease along the drive rollers to lower friction.", correct: false },
-        { text: "Tighten the left adjustment screw or loosen the right screw in quarter-turn increments.", correct: true },
-        { text: "Loosen the internal motor drive belt to relieve tension.", correct: false },
-        { text: "Increase step feed rate in software to straighten belt velocity.", correct: false }
+        { text: "Fastening pieces C and D, Screw M4*8, and 2.5 mm screwdriver.", correct: false },
+        { text: "Fastening pieces A and B, Screw M4*10, and 3 mm screwdriver.", correct: true },
+        { text: "Only magnetic locating pins with zero screws.", correct: false },
+        { text: "Universal brackets with M3*12 thumb-bolts.", correct: false }
       ],
-      explanation: "Conveyor belts steer toward the side with lower tension. Adding small, incremental tension to the left side (or relieving tension from the right side) centers the belt."
+      explanation: "Page 01 lists Fastening pieces A & B, Screw M4*10, and the 3 mm screwdriver for the F1 Ultra. Pieces C & D, M4*8, and the 2.5 mm driver are specifically for the F2 Ultra."
     },
     {
-      question: "Scenario 3: Polished acrylic blanks slide backward 2–4 mm each time the conveyor indexes between laser passes. What is the optimal industrial engineering countermeasure?",
+      question: "Scenario 3: When processing large materials up to 500 mm in length, which rule governs laser coverage according to the manual?",
       options: [
-        { text: "Increase laser power to complete passes quicker.", correct: false },
-        { text: "Apply a tacky silicone fixture mat or low-profile alignment jig to the belt surface.", correct: true },
-        { text: "Reduce processing resolution from 300 DPI to 150 DPI.", correct: false },
-        { text: "Manually hold down the parts during machine indexing.", correct: false }
+        { text: "The galvo scans across the entire width and length simultaneously.", correct: false },
+        { text: "The laser beam directs solely onto the central line; any portion to the left of this line will not be processed.", correct: true },
+        { text: "Workpieces must be rotated 90 degrees every 100 mm of travel.", correct: false },
+        { text: "The conveyor must be run in reverse direction from left to right.", correct: false }
       ],
-      explanation: "Low friction between polished acrylic and the belt causes inertial slip during acceleration. Adding a tacky silicone mat or pocket jig prevents movement."
+      explanation: "Page 10 states: 'When processing large materials, the device directs laser beams solely onto the central line of the conveyor. As the material moves from right to left, any portion of the material on the left of this central line will not be processed.'"
     },
     {
-      question: "Scenario 4: When clicking Smart-Fill on 12 dark anodized dog tags, XCS only detects 4 parts and misaligns the rest. What corrects the computer vision algorithm?",
+      question: "Scenario 4: When staging materials for batch processing on the conveyor belt, which requirement is strictly mandated by the safety instructions?",
       options: [
-        { text: "Place a light-colored, high-contrast backing mat beneath the parts and eliminate harsh directional overhead glare.", correct: true },
-        { text: "Boost laser frequency to illuminate the camera field.", correct: false },
-        { text: "Switch working mode to 'Rotary Attachment' and back to 'Conveyor'.", correct: false },
-        { text: "Recalibrate the dual red focus diodes.", correct: false }
+        { text: "Materials can be mixed substrates as long as they are magnetically secured.", correct: false },
+        { text: "Materials must be identical, must not touch, and must not overlap with each other.", correct: true },
+        { text: "Materials must be stacked two high to maximize automated feeder throughput.", correct: false },
+        { text: "Operators must manually hold parts down as the conveyor indexes forward.", correct: false }
       ],
-      explanation: "XCS Smart-Fill uses luminance and edge-detection gradient filters. Dark parts on dark belts create weak contrast, while harsh glare causes specular reflections that confuse the contour algorithm."
+      explanation: "Page 09 explicitly states: 'Ensure that you use identical materials. When placing materials during processing, keep your hand away from the processing area to avoid skin injuries. Ensure that the materials do not touch or overlap with each other.'"
     }
   ];
 
@@ -1166,11 +1207,11 @@
 
       scoreText.textContent = `You scored ${userScore} of ${quizData.length}`;
       if (userScore === 4) {
-        evalText.textContent = "Status: Subject Matter Expert (SME). You possess a complete grasp of physical dynamics, calibration math, and computer vision setup.";
+        evalText.textContent = "Status: Subject Matter Expert (SME). You demonstrate mastery over xTool F1 Ultra mounting hardware, safety enclosures, and processing rules.";
       } else if (userScore >= 2) {
-        evalText.textContent = "Status: Qualified Process Technician. Review optical calibration and friction physics to solidify your troubleshooting.";
+        evalText.textContent = "Status: Qualified Process Technician. Review Pages 06–10 of the Quick Start Guide to master fastener and enclosure specs.";
       } else {
-        evalText.textContent = "Status: Trainee Operator. Recommend reviewing Chapters 02 through 04 before operating live conveyor jobs.";
+        evalText.textContent = "Status: Trainee Operator. Recommend re-reading Chapters 01, 02, and 05 before operating production batches.";
       }
       scoreCard.style.display = 'block';
     }
