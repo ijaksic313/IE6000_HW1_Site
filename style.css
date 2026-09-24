@@ -17,7 +17,7 @@
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
-  --max-width: 920px;
+  --max-width: 1060px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --radius: 3px;
 }
@@ -146,7 +146,7 @@ img { max-width: 100%; display: block; }
 .site-nav ul {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2vw, 1.9rem);
+  gap: clamp(0.8rem, 1.8vw, 1.7rem);
 }
 
 .site-nav a {
@@ -183,7 +183,7 @@ img { max-width: 100%; display: block; }
   background: var(--color-text);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .nav-toggle { display: flex; }
   .site-nav ul {
     position: absolute;
@@ -199,7 +199,7 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
     transition: max-height 0.25s ease;
   }
-  .site-nav ul.is-open { max-height: 320px; }
+  .site-nav ul.is-open { max-height: 420px; }
   .site-nav li { width: 100%; }
   .site-nav a {
     display: block;
@@ -220,7 +220,7 @@ img { max-width: 100%; display: block; }
 
 .section-head {
   margin-bottom: clamp(2rem, 4vw, 2.75rem);
-  max-width: 48ch;
+  max-width: 60ch;
 }
 .section-head h2 {
   font-size: clamp(1.6rem, 3vw, 2.1rem);
@@ -244,7 +244,6 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-/* Item 6: Circuit-trace section dividers */
 .section-trace-divider {
   width: 100%;
   height: 24px;
@@ -276,7 +275,6 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-/* Item 1: Signature hero moment (Circuit trace draw) */
 .hero-trace-container {
   position: absolute;
   top: 15%;
@@ -347,7 +345,6 @@ img { max-width: 100%; display: block; }
   .hero-side-image { display: none; }
 }
 
-/* Item 2: Live status indicator (HMI LED) */
 .eyebrow-line {
   display: flex;
   align-items: center;
@@ -422,7 +419,6 @@ img { max-width: 100%; display: block; }
   gap: 0.9rem;
 }
 
-/* Item 3: Bolder, Glowing CTA button */
 .btn {
   font-family: var(--font-mono);
   font-size: 0.88rem;
@@ -456,7 +452,6 @@ img { max-width: 100%; display: block; }
   transform: translateY(-2px);
 }
 
-/* Item 4: Hero Big Anchor Number */
 .hero-bottom-group {
   margin-top: clamp(2.75rem, 6vw, 3.75rem);
   padding-top: 2rem;
@@ -523,9 +518,6 @@ img { max-width: 100%; display: block; }
   font-weight: 400;
 }
 
-/* ===========================================================
-   Item 5: Industrial Imagery Band
-   =========================================================== */
 .industrial-image-band {
   position: absolute;
   top: 0;
@@ -545,7 +537,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================================================
-   Timeline & Item 7: Punchier Hover States
+   Timeline
    =========================================================== */
 .timeline {
   position: relative;
@@ -709,7 +701,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================================================
-   Skills & Chips (Tactile Hovers)
+   Skills & Chips
    =========================================================== */
 .skills-grid {
   display: grid;
@@ -797,6 +789,452 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================================================
+   xTool Conveyor: Interactive Layout & Animated Stage
+   =========================================================== */
+.sop-interactive-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.sop-chapters-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sop-chapter {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 3.5vw, 2rem);
+  transition: border-color 0.2s ease;
+}
+.sop-chapter:hover {
+  border-color: rgba(242, 169, 59, 0.4);
+}
+
+.chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 1px solid var(--color-border-soft);
+  padding-bottom: 0.85rem;
+}
+
+.chapter-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius);
+  background: rgba(242, 169, 59, 0.12);
+  border: 1px solid rgba(242, 169, 59, 0.4);
+  color: var(--color-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chapter-header h3 {
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+}
+
+.chapter-content p {
+  color: var(--color-muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Hover-Targetable Interactive Items */
+.interactive-item {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.55rem 0.75rem;
+  transition: all 0.18s ease;
+}
+.interactive-item:hover,
+.interactive-item.is-active {
+  background: rgba(242, 169, 59, 0.07);
+  border-color: rgba(242, 169, 59, 0.5);
+  box-shadow: 0 0 12px rgba(242, 169, 59, 0.1);
+  transform: translateX(4px);
+}
+
+.sop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.sop-list li.interactive-item {
+  padding-left: 1.7rem;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+.sop-list li.interactive-item::before {
+  content: "■";
+  position: absolute;
+  left: 0.55rem;
+  top: 0.65rem;
+  font-size: 0.65rem;
+  color: var(--color-amber);
+}
+
+.sop-ordered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  counter-reset: sop-counter;
+}
+.sop-ordered-list > li.interactive-item {
+  padding-left: 2rem;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+.sop-ordered-list > li.interactive-item::before {
+  counter-increment: sop-counter;
+  content: counter(sop-counter) ".";
+  position: absolute;
+  left: 0.65rem;
+  top: 0.55rem;
+  font-family: var(--font-mono);
+  color: var(--color-blue);
+  font-weight: 500;
+}
+
+.sop-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+.sop-step-box {
+  background: var(--color-panel-raised);
+  border: 1px solid var(--color-border);
+  padding: 0.85rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.sop-step-box:hover,
+.sop-step-box.is-active {
+  border-color: var(--color-amber);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(242, 169, 59, 0.18);
+}
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-amber);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.sop-step-box h4 {
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+}
+.sop-step-box p {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Sticky Animated Visual Stage (Right Side) */
+.sop-stage-col {
+  position: sticky;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stage-monitor {
+  background: var(--color-panel-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 1px rgba(242, 169, 59, 0.3);
+}
+
+.stage-top-bar {
+  background: #111822;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+.stage-title {
+  color: var(--color-text);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.stage-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-amber);
+  box-shadow: 0 0 6px var(--color-amber);
+}
+.stage-status {
+  color: var(--color-blue);
+  font-size: 0.7rem;
+}
+
+.stage-canvas-area {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  background: radial-gradient(circle at center, #152230 0%, #0d141e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stage-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.stage-caption-bar {
+  padding: 0.9rem 1.1rem;
+  background: var(--color-panel);
+  border-top: 1px solid var(--color-border);
+}
+.stage-caption-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-amber);
+  margin-bottom: 0.25rem;
+}
+.stage-caption-desc {
+  font-size: 0.84rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+/* Calibration Tool Inside Chapter 4 */
+.interactive-tool-card {
+  margin-top: 1.25rem;
+  background: var(--color-panel-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+}
+.interactive-tool-card h4 {
+  color: var(--color-blue);
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin: 0.85rem 0;
+}
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.calc-input-group label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--color-muted);
+}
+.calc-input-group input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  padding: 0.5rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+.calc-input-group input:focus {
+  outline: none;
+  border-color: var(--color-amber);
+}
+.btn-sm {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.calc-result-box {
+  margin-top: 0.8rem;
+  padding: 0.75rem;
+  background: rgba(15, 22, 31, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+}
+
+/* Dynamic Animation Components in Stage SVG */
+@keyframes pulseEStop {
+  0%, 100% { fill: #f87171; r: 14; filter: drop-shadow(0 0 6px rgba(248,113,113,0.8)); }
+  50% { fill: #ef4444; r: 16; filter: drop-shadow(0 0 14px rgba(239,68,68,1)); }
+}
+@keyframes reachHand {
+  0% { transform: translate(50px, 40px); opacity: 0; }
+  40% { transform: translate(0px, 0px); opacity: 1; }
+  70% { transform: translate(-3px, -3px) scale(0.96); opacity: 1; }
+  100% { transform: translate(50px, 40px); opacity: 0; }
+}
+@keyframes lowerChassis {
+  0% { transform: translateY(-45px); opacity: 0.2; }
+  50% { transform: translateY(0); opacity: 1; }
+  80% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-45px); opacity: 0.2; }
+}
+@keyframes feedBelt {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -80; }
+}
+@keyframes pulseLaser {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; filter: drop-shadow(0 0 10px #6fb2dd); }
+}
+@keyframes camScan {
+  0%, 100% { transform: translateY(-40px); opacity: 0.2; }
+  50% { transform: translateY(40px); opacity: 0.9; }
+}
+@keyframes popBox {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Quiz Section */
+.quiz-wrapper {
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-border-soft);
+  padding-top: 2.5rem;
+}
+.quiz-header { margin-bottom: 1.75rem; }
+.quiz-header h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-top: 0.4rem;
+}
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+.quiz-card {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+.quiz-question {
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+  color: var(--color-text);
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.quiz-opt-btn {
+  background: var(--color-panel-raised);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0.7rem 0.95rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.quiz-opt-btn:hover:not(:disabled) {
+  border-color: var(--color-blue);
+  background: rgba(111, 178, 221, 0.08);
+}
+.quiz-opt-btn:disabled { cursor: default; }
+.quiz-opt-btn.opt-correct {
+  border-color: #4ade80 !important;
+  background: rgba(74, 222, 128, 0.1) !important;
+  color: #86efac;
+}
+.quiz-opt-btn.opt-incorrect {
+  border-color: #f87171 !important;
+  background: rgba(248, 113, 113, 0.1) !important;
+  color: #fca5a5;
+}
+.quiz-explanation {
+  display: none;
+  margin-top: 0.9rem;
+  padding: 0.85rem;
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-amber);
+  font-size: 0.86rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+.verdict-correct {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #4ade80;
+  margin-right: 0.4rem;
+}
+.verdict-incorrect {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #f87171;
+  margin-right: 0.4rem;
+}
+
+.quiz-score-card {
+  background: var(--color-panel-raised);
+  border: 1px solid var(--color-amber);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.score-display {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-amber);
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+.score-evaluation {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 960px) {
+  .sop-interactive-layout {
+    grid-template-columns: 1fr;
+  }
+  .sop-stage-col {
+    position: static;
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+  .stage-canvas-area {
+    height: 260px;
+  }
+}
+
+/* ===========================================================
    Contact
    =========================================================== */
 .section-contact { border-bottom: none; }
@@ -848,236 +1286,3 @@ a.contact-item:hover {
 }
 .footer-inner a { color: var(--color-blue); }
 .footer-inner a:hover { text-decoration: underline; }
-/* ===========================================================
-   xTool Conveyor Chapter & Quiz Additions
-   =========================================================== */
-.sop-lesson-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3.5rem;
-}
-
-.sop-chapter {
-  background: var(--color-panel);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: clamp(1.4rem, 3.5vw, 2.2rem);
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.sop-chapter:hover {
-  border-color: rgba(242, 169, 59, 0.4);
-  transform: translateY(-2px);
-}
-
-.chapter-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.1rem;
-  border-bottom: 1px solid var(--color-border-soft);
-  padding-bottom: 0.85rem;
-}
-
-.chapter-badge {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius);
-  background: rgba(242, 169, 59, 0.12);
-  border: 1px solid rgba(242, 169, 59, 0.4);
-  color: var(--color-amber);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.chapter-header h3 {
-  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
-  color: var(--color-text);
-}
-
-.chapter-content p {
-  color: var(--color-muted);
-  font-size: 0.98rem;
-  line-height: 1.65;
-  margin-bottom: 1rem;
-}
-
-.sop-list, .sop-ordered-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin-top: 0.75rem;
-}
-.sop-list li {
-  position: relative;
-  padding-left: 1.25rem;
-  color: var(--color-text);
-  font-size: 0.95rem;
-}
-.sop-list li::before {
-  content: "■";
-  position: absolute;
-  left: 0;
-  top: 0.15em;
-  font-size: 0.65rem;
-  color: var(--color-amber);
-}
-
-.sop-ordered-list {
-  counter-reset: sop-counter;
-}
-.sop-ordered-list > li {
-  position: relative;
-  padding-left: 1.8rem;
-  color: var(--color-text);
-  font-size: 0.95rem;
-}
-.sop-ordered-list > li::before {
-  counter-increment: sop-counter;
-  content: counter(sop-counter) ".";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-family: var(--font-mono);
-  color: var(--color-blue);
-  font-weight: 500;
-}
-
-.sop-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-.sop-step-box {
-  background: var(--color-panel-raised);
-  border: 1px solid var(--color-border);
-  padding: 1.1rem;
-  border-radius: var(--radius);
-}
-.step-num {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-amber);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-.sop-step-box h4 {
-  font-size: 0.95rem;
-  margin-bottom: 0.45rem;
-}
-.sop-step-box p {
-  font-size: 0.85rem;
-  color: var(--color-muted);
-  margin-bottom: 0;
-}
-
-.quiz-wrapper {
-  margin-top: 3.5rem;
-  border-top: 1px solid var(--color-border-soft);
-  padding-top: 2.5rem;
-}
-.quiz-header {
-  margin-bottom: 2rem;
-}
-.quiz-header h3 {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  margin-top: 0.4rem;
-}
-
-.quiz-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.quiz-card {
-  background: var(--color-panel);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-}
-.quiz-question {
-  font-size: 1.02rem;
-  font-weight: 500;
-  margin-bottom: 1.15rem;
-  color: var(--color-text);
-}
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.quiz-opt-btn {
-  background: var(--color-panel-raised);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  text-align: left;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.quiz-opt-btn:hover:not(:disabled) {
-  border-color: var(--color-blue);
-  background: rgba(111, 178, 221, 0.08);
-}
-.quiz-opt-btn:disabled {
-  cursor: default;
-}
-.quiz-opt-btn.opt-correct {
-  border-color: #4ade80 !important;
-  background: rgba(74, 222, 128, 0.1) !important;
-  color: #86efac;
-}
-.quiz-opt-btn.opt-incorrect {
-  border-color: #f87171 !important;
-  background: rgba(248, 113, 113, 0.1) !important;
-  color: #fca5a5;
-}
-
-.quiz-explanation {
-  display: none;
-  margin-top: 1rem;
-  padding: 0.9rem;
-  background: var(--color-bg);
-  border-left: 3px solid var(--color-amber);
-  font-size: 0.88rem;
-  color: var(--color-muted);
-  line-height: 1.5;
-}
-.verdict-correct {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: #4ade80;
-  margin-right: 0.4rem;
-}
-.verdict-incorrect {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: #f87171;
-  margin-right: 0.4rem;
-}
-
-.quiz-score-card {
-  background: var(--color-panel-raised);
-  border: 1px solid var(--color-amber);
-  border-radius: var(--radius);
-  padding: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-.score-display {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--color-amber);
-  font-weight: 700;
-  margin: 0.5rem 0;
-}
-.score-evaluation {
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1.25rem;
-}
