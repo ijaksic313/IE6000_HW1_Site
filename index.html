@@ -306,22 +306,20 @@
     </svg>
   </div>
 
-  <!-- XTOOL CONVEYOR (NEW TECHNICAL EDUCATIONAL SECTION) -->
+  <!-- XTOOL CONVEYOR -->
   <section id="xtool-conveyor" class="section">
     <div class="grid-backdrop" aria-hidden="true"></div>
     <div class="section-inner">
       <div class="section-head">
         <div class="eyebrow-line">
           <span class="eyebrow-tick" aria-hidden="true"></span>
-          <span>Technical Standard Operating Procedure &amp; Subject Matter Guide</span>
+          <span>Technical SOP &amp; Subject Matter Guide</span>
         </div>
         <h2>xTool F1 Ultra Automated Conveyor</h2>
         <p class="section-sub">A comprehensive engineering walkthrough covering physical integration, mechanical belt tracking, optical calibration, XCS batch automation, and interactive diagnostics.</p>
       </div>
 
-      <!-- LESSON CHAPTER CONTAINER -->
       <div class="sop-lesson-container">
-
         <!-- Chapter 1 -->
         <article class="sop-chapter">
           <header class="chapter-header">
@@ -329,12 +327,12 @@
             <h3>Safety &amp; Operational Precautions</h3>
           </header>
           <div class="chapter-content">
-            <p>High-speed galvo lasers coupled with continuous feed mechanisms introduce both mechanical pinch hazards and optical exposure risks. Review these mandatory control baselines prior to commissioning:</p>
+            <p>Galvo-based lasers paired with automated conveyors introduce both mechanical pinch hazards and optical radiation exposure risks:</p>
             <ul class="sop-list">
               <li><strong>E-Stop Accessibility:</strong> Maintain unhindered access to the F1 Ultra red emergency stop switch at all times.</li>
-              <li><strong>Pinch Point Awareness:</strong> Keep hands, loose cables, and clothing strictly clear of the drive rollers, idler drum, and lateral edges during indexing.</li>
-              <li><strong>Optical Density Protection:</strong> While running open-feed pass-through stock, wear rated protective laser safety goggles (OD6+ at 1064 nm and 455 nm) and install magnetic shields.</li>
-              <li><strong>Infeed/Outfeed Clearances:</strong> Provide an unobstructed zone of at least 350 mm on both ends to eliminate workpiece binding and drop-off damage.</li>
+              <li><strong>Pinch Point Awareness:</strong> Keep hands, cables, and loose clothing clear of drive rollers, idler drums, and belt edges during indexing.</li>
+              <li><strong>Laser Radiation Protection:</strong> When operating with extended pass-through feeds, wear OD6+ rated laser safety glasses (1064 nm and 455 nm) and attach magnetic shields.</li>
+              <li><strong>Infeed/Outfeed Clearances:</strong> Provide at least 350 mm of unobstructed travel at both ends to prevent part collisions or binding.</li>
             </ul>
           </div>
         </article>
@@ -346,22 +344,22 @@
             <h3>Hardware Docking &amp; Mechanical Alignment</h3>
           </header>
           <div class="chapter-content">
-            <p>Repeatable high-tolerance engraving relies on a planar, rigid physical connection between the conveyor chassis and the F1 Ultra galvo bed.</p>
+            <p>Repeatable high-tolerance marking requires a planar, rigid connection between the conveyor frame and the F1 Ultra chassis:</p>
             <div class="sop-steps-grid">
               <div class="sop-step-box">
                 <span class="step-num">Step 1</span>
                 <h4>Clean &amp; Clear Base</h4>
-                <p>Power off the F1 Ultra. Remove any cutting slats or alignment plates from the interior staging floor. Wipe clean of all grit.</p>
+                <p>Power off the F1 Ultra. Remove any cutting slats or alignment jigs from the interior bed. Wipe the bed clean of debris.</p>
               </div>
               <div class="sop-step-box">
                 <span class="step-num">Step 2</span>
                 <h4>Seat Chassis</h4>
-                <p>Lower the conveyor assembly straight down into the floor datum holes. Ensure the chassis sits completely planar with zero wobble.</p>
+                <p>Lower the conveyor assembly straight down into the floor datum alignment holes. Ensure the chassis sits completely planar with zero wobble.</p>
               </div>
               <div class="sop-step-box">
                 <span class="step-num">Step 3</span>
                 <h4>Data Interface</h4>
-                <p>Connect the multi-pin umbilical cord to the interior peripheral bus on the right chamber wall. Fasten securely.</p>
+                <p>Plug the multi-pin umbilical cord into the interior peripheral bus on the right chamber wall. Fasten thumbscrews securely.</p>
               </div>
               <div class="sop-step-box">
                 <span class="step-num">Step 4</span>
@@ -379,18 +377,15 @@
             <h3>Software Configuration (XCS)</h3>
           </header>
           <div class="chapter-content">
-            <p>Establish software pairing within xTool Creative Space (XCS) to route stepping and coordinate commands accurately:</p>
+            <p>Establish software communication inside xTool Creative Space (XCS) to synchronize conveyor indexing pulses:</p>
             <ol class="sop-ordered-list">
-              <li>Connect the F1 Ultra via high-speed USB-C or local Wi-Fi and open XCS.</li>
-              <li>Select the <strong>Device Settings (Gear Icon)</strong> located adjacent to the F1 Ultra device card.</li>
-              <li>Under <strong>Working Mode</strong>, switch from <em>Regular Surface</em> to <strong>Conveyor</strong>.</li>
-              <li>Choose your target workflow mode:
-                <ul>
-                  <li><strong>Auto-Stream / Batch Conveyor:</strong> For repeating arrays of discrete small parts (cards, keychains, tags).</li>
-                  <li><strong>Long Material:</strong> For continuous workpieces exceeding the galvo's native 220 &times; 220 mm bed area.</li>
-                </ul>
+              <li>Connect the F1 Ultra via USB-C or Wi-Fi and open XCS.</li>
+              <li>Select the <strong>Device Settings (Gear Icon)</strong> next to the F1 Ultra device card.</li>
+              <li>Under <strong>Working Mode</strong>, select <strong>Conveyor</strong>.</li>
+              <li>Select your production mode:
+                <p style="margin: 0.4rem 0 0.4rem 1rem; color: var(--color-muted);">• <strong>Auto-Stream / Batch Conveyor:</strong> For arrays of discrete parts (tags, keychains, coins).<br>• <strong>Long Material:</strong> For continuous workpieces exceeding the galvo's native 220 &times; 220 mm bed area.</p>
               </li>
-              <li>Verify the software feed vector matches physical part travel (standard: rear-infeed to front-outfeed).</li>
+              <li>Confirm the software feed vector matches physical part travel (rear intake to front ejection).</li>
             </ol>
           </div>
         </article>
@@ -399,35 +394,17 @@
         <article class="sop-chapter">
           <header class="chapter-header">
             <span class="chapter-badge">Chapter 04</span>
-            <h3>Optical &amp; Step-Distance Calibration Protocol</h3>
+            <h3>Optical &amp; Step-Distance Calibration</h3>
           </header>
           <div class="chapter-content">
-            <p>Because minor manufacturing variances exist across stepper drive gears and belt friction surfaces, execute this 100 mm benchmark routine:</p>
+            <p>To eliminate linear compression or stretch along the indexing direction, calibrate the motor step multiplier:</p>
             <ol class="sop-ordered-list">
-              <li>Place a flat scrap test substrate (such as anodized test card or rigid cardboard) onto the conveyor belt.</li>
-              <li>Set the focal height using the automated focus or dual-red-dot optical convergence.</li>
-              <li>Navigate to <strong>Settings &rarr; Accessory &rarr; Conveyor &rarr; Step Calibration</strong>.</li>
-              <li>Set benchmark mark distance to <strong>100.00 mm</strong> and click <strong>Mark Benchmark Line</strong>. The laser marks a transverse datum line, indexes the belt, and fires a second parallel line.</li>
-              <li>Measure the exact center-to-center distance between both marks using digital calipers ($L_{\text{measured}}$).</li>
+              <li>Place a flat scrap test substrate (such as cardboard or an anodized aluminum sheet) onto the belt surface.</li>
+              <li>Run the auto-focus routine to establish accurate focal height.</li>
+              <li>In XCS, navigate to <strong>Settings &rarr; Accessory &rarr; Conveyor &rarr; Step Calibration</strong>.</li>
+              <li>Set the test target distance to <strong>100.00 mm</strong> and click <strong>Mark Benchmark Line</strong>. The laser marks a transverse reference line, indexes the conveyor, and marks a second parallel line.</li>
+              <li>Measure the exact center-to-center distance between both marks using digital calipers. Enter the measured length into XCS to auto-correct the feed ratio.</li>
             </ol>
-            
-            <!-- Interactive Calibration Calculator Tool -->
-            <div class="interactive-tool-card">
-              <h4>Interactive Calibration Scale Tool</h4>
-              <p>Enter your nominal current multiplier and actual measured caliper length to calculate the adjusted correction value for XCS:</p>
-              <div class="calc-grid">
-                <div class="calc-input-group">
-                  <label for="currentVal">Current XCS Calibration Value</label>
-                  <input type="number" id="currentVal" value="100.00" step="0.01">
-                </div>
-                <div class="calc-input-group">
-                  <label for="measuredVal">Actual Measured Length (mm)</label>
-                  <input type="number" id="measuredVal" placeholder="e.g. 98.40" step="0.01">
-                </div>
-              </div>
-              <button class="btn btn-primary btn-sm" id="calcBtn" type="button">Calculate Corrected Value</button>
-              <div id="calcResult" class="calc-result-box" style="display:none;"></div>
-            </div>
           </div>
         </article>
 
@@ -438,20 +415,19 @@
             <h3>Automated Batch Processing &amp; Smart-Fill</h3>
           </header>
           <div class="chapter-content">
-            <p>Leverage the high-resolution overhead camera to populate vector artwork automatically across randomized blank positions:</p>
+            <p>Execute automated part production utilizing the overhead machine vision camera:</p>
             <ul class="sop-list">
-              <li><strong>Load Array:</strong> Scatter 5–15 blanks along the belt with at least 10 mm separation to prevent software bounding box overlaps.</li>
-              <li><strong>Snapshot:</strong> Click <strong>Camera Refresh</strong> to capture the live physical orientation of all workpieces.</li>
-              <li><strong>Define Master Element:</strong> Overlay your text/vector graphic onto the first blank and confirm scale and engraving parameters.</li>
-              <li><strong>Smart Batch Fill:</strong> Highlight the master group and trigger <strong>Smart Fill</strong>. The computer vision engine registers shapes, calculates centroids, and maps the artwork across all detected blanks.</li>
-              <li><strong>Continuous Execution:</strong> Click <strong>Process &rarr; Start</strong>. The unit processes the field, indexes the conveyor forward, and repeats.</li>
+              <li><strong>Stage Blanks:</strong> Place 5–15 identical blanks onto the conveyor belt with at least 10 mm separation.</li>
+              <li><strong>Vision Snapshot:</strong> Click <strong>Camera Refresh</strong> in XCS to capture the live physical coordinates of all pieces.</li>
+              <li><strong>Configure Master Element:</strong> Drag your vector graphic or text over the first detected blank to set position, power, and speed.</li>
+              <li><strong>Smart Batch Match:</strong> Highlight the master design and click <strong>Smart Fill</strong>. The software automatically detects centroids and duplicates the design across every blank.</li>
+              <li><strong>Process Execution:</strong> Click <strong>Process &rarr; Start</strong> to begin automatic marking and indexing.</li>
             </ul>
           </div>
         </article>
-
       </div>
 
-      <!-- INTERACTIVE TROUBLESHOOTING QUIZ -->
+      <!-- TROUBLESHOOTING QUIZ -->
       <div id="conveyor-quiz" class="quiz-wrapper">
         <div class="quiz-header">
           <div class="eyebrow-line">
@@ -459,21 +435,18 @@
             <span>Operator Knowledge Verification</span>
           </div>
           <h3>Conveyor Diagnostic &amp; Troubleshooting Assessment</h3>
-          <p class="section-sub">Test your operational expertise across belt drift, linear distortion, material slip, and computer vision errors.</p>
+          <p class="section-sub">Test your operational problem-solving skills across belt tracking, dimensional scaling, and vision detection.</p>
         </div>
 
-        <div id="quizContainer" class="quiz-container">
-          <!-- Populated by JavaScript -->
-        </div>
+        <div id="quizContainer" class="quiz-container"></div>
 
         <div id="quizScoreCard" class="quiz-score-card" style="display: none;">
           <h4>Assessment Complete</h4>
           <p class="score-display" id="scoreText">You scored 4 / 4</p>
           <p class="score-evaluation" id="evalText"></p>
-          <button class="btn btn-ghost btn-sm" id="resetQuizBtn" type="button">Retake Assessment</button>
+          <button class="btn btn-ghost" id="resetQuizBtn" type="button" style="margin-top:1rem; cursor:pointer;">Retake Assessment</button>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -719,6 +692,6 @@
 
   renderQuiz();
 </script>
-
+  
 </body>
 </html>
