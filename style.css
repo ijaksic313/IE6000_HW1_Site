@@ -1021,7 +1021,9 @@ img { max-width: 100%; display: block; }
   line-height: 1.45;
 }
 
-/* Animations */
+/* ===========================================================
+   Refined Smooth Keyframe Animations
+   =========================================================== */
 @keyframes pulseEStop {
   0%, 100% { fill: #f87171; r: 14; filter: drop-shadow(0 0 6px rgba(248,113,113,0.8)); }
   50% { fill: #ef4444; r: 16; filter: drop-shadow(0 0 14px rgba(239,68,68,1)); }
@@ -1044,12 +1046,33 @@ img { max-width: 100%; display: block; }
   80% { transform: translateY(0px); }
   100% { transform: translateY(-30px); }
 }
-@keyframes screwDrive {
-  0% { transform: translateY(-15px) rotate(0deg); opacity: 0; }
-  50% { transform: translateY(0px) rotate(360deg); opacity: 1; }
-  80% { transform: translateY(0px) rotate(360deg); opacity: 1; }
-  100% { transform: translateY(-15px) rotate(0deg); opacity: 0; }
+
+/* Smooth, non-faded, slow key insertion */
+@keyframes keyInsertSmooth {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(0); }
+  50% { transform: translateX(65px); }
+  80% { transform: translateX(65px); }
+  100% { transform: translateX(0); }
 }
+
+/* Smooth, steady Piece B bracket descent */
+@keyframes bracketDescendSmooth {
+  0% { transform: translateY(-35px); }
+  35% { transform: translateY(0); }
+  85% { transform: translateY(0); }
+  100% { transform: translateY(-35px); }
+}
+
+/* Slow, visible M4*10 screws fastening down */
+@keyframes screwsDriveSmooth {
+  0% { transform: translateY(-24px); opacity: 0.4; }
+  25% { transform: translateY(-24px); opacity: 1; }
+  60% { transform: translateY(0); opacity: 1; }
+  85% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-24px); opacity: 0.4; }
+}
+
 @keyframes feedBelt {
   0% { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: -80; }
