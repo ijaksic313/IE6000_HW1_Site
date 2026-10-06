@@ -737,7 +737,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================================================
-   Educational Overviews & Categorization Primer Cards
+   Educational Primers & Categorization Cards
    =========================================================== */
 .primer-wrapper {
   margin-bottom: 3.5rem;
@@ -838,7 +838,6 @@ img { max-width: 100%; display: block; }
   color: var(--color-blue);
 }
 
-/* Specific Categorization Spotlight Card */
 .categorization-card {
   border-color: var(--color-amber) !important;
   background: linear-gradient(180deg, rgba(242, 169, 59, 0.06) 0%, var(--color-panel-raised) 100%) !important;
@@ -1243,6 +1242,19 @@ img { max-width: 100%; display: block; }
   25% { transform: translate(18px, 10px); }
   50% { transform: translate(-10px, 15px); }
   75% { transform: translate(12px, -8px); }
+}
+
+/* Sweeping galvo vector line animation */
+@keyframes sweepGalvo {
+  0% { transform: rotate(-30deg); }
+  50% { transform: rotate(30deg); }
+  100% { transform: rotate(-30deg); }
+}
+
+/* Converging dual source beam pulses */
+@keyframes convergePulses {
+  0%, 100% { opacity: 0.3; stroke-dashoffset: 60; }
+  50% { opacity: 1; stroke-dashoffset: 0; filter: drop-shadow(0 0 6px var(--color-amber)); }
 }
 
 /* Tool & Quiz Styles */
