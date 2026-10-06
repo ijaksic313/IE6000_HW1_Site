@@ -737,6 +737,135 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================================================
+   Educational Overviews & Categorization Primer Cards
+   =========================================================== */
+.edu-overview-container {
+  margin-bottom: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 3.5vw, 2.2rem);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.overview-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.overview-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius);
+  background: rgba(111, 178, 221, 0.12);
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.overview-card-header h3 {
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+}
+
+.overview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.overview-subtopic {
+  background: var(--color-panel-raised);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+}
+
+.overview-subtopic h4 {
+  color: var(--color-amber);
+  font-size: 1.02rem;
+  margin-bottom: 0.5rem;
+}
+
+.overview-subtopic p {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.overview-subtopic ul {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.overview-subtopic ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.overview-subtopic ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0.35rem;
+  color: var(--color-blue);
+}
+
+/* Specific Categorization Spotlight Card */
+.categorization-card {
+  border-color: var(--color-amber);
+  background: linear-gradient(180deg, rgba(242, 169, 59, 0.05) 0%, var(--color-panel) 100%);
+}
+
+.categorization-card .overview-badge {
+  background: rgba(242, 169, 59, 0.15);
+  border-color: var(--color-amber);
+  color: var(--color-amber);
+}
+
+.categorization-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 0.85rem;
+}
+
+.spec-block {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.9rem;
+  border-radius: var(--radius);
+}
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--color-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.spec-val {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ===========================================================
    Shared Interactive Layouts (xTool Sections)
    =========================================================== */
 .sop-interactive-layout {
@@ -1021,9 +1150,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.45;
 }
 
-/* ===========================================================
-   Refined Smooth Keyframe Animations
-   =========================================================== */
+/* Keyframe Animations */
 @keyframes pulseEStop {
   0%, 100% { fill: #f87171; r: 14; filter: drop-shadow(0 0 6px rgba(248,113,113,0.8)); }
   50% { fill: #ef4444; r: 16; filter: drop-shadow(0 0 14px rgba(239,68,68,1)); }
@@ -1047,7 +1174,6 @@ img { max-width: 100%; display: block; }
   100% { transform: translateY(-30px); }
 }
 
-/* Smooth, non-faded, slow key insertion */
 @keyframes keyInsertSmooth {
   0% { transform: translateX(0); }
   25% { transform: translateX(0); }
@@ -1056,7 +1182,6 @@ img { max-width: 100%; display: block; }
   100% { transform: translateX(0); }
 }
 
-/* Smooth, steady Piece B bracket descent */
 @keyframes bracketDescendSmooth {
   0% { transform: translateY(-35px); }
   35% { transform: translateY(0); }
@@ -1064,7 +1189,6 @@ img { max-width: 100%; display: block; }
   100% { transform: translateY(-35px); }
 }
 
-/* Slow, visible M4*10 screws fastening down */
 @keyframes screwsDriveSmooth {
   0% { transform: translateY(-24px); opacity: 0.4; }
   25% { transform: translateY(-24px); opacity: 1; }
