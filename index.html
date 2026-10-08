@@ -661,14 +661,14 @@
             <span>Operator Knowledge Verification</span>
           </div>
           <h3>xTool F1 Ultra Diagnostic &amp; Safety Assessment</h3>
-          <p class="section-sub">Test your technical understanding of the F1 Ultra's dual-source laser mechanics, electrical interlocks, and maintenance procedures.</p>
+          <p class="section-sub">Test everything covered above: laser physics and galvo kinematics, the F1 Ultra's dual-source architecture, commissioning interlocks, workholding accessories, controller workflows, and maintenance procedures. Select an answer to see its explanation.</p>
         </div>
 
         <div id="f1QuizContainer" class="quiz-container"></div>
 
         <div id="f1QuizScoreCard" class="quiz-score-card" style="display: none;">
           <h4>Assessment Complete</h4>
-          <p class="score-display" id="f1ScoreText">You scored 4 / 4</p>
+          <p class="score-display" id="f1ScoreText"></p>
           <p class="score-evaluation" id="f1EvalText"></p>
           <button class="btn btn-ghost" id="resetF1QuizBtn" type="button" style="margin-top:1rem; cursor:pointer;">Retake Assessment</button>
         </div>
@@ -760,9 +760,24 @@
                   </ul>
                 </div>
 
+                <div class="primer-interactive-item" data-primer="prim-conv-drives">
+                  <h4>
+                    <span>5. How Conveyors Are Powered &amp; Controlled</span>
+                    <span class="cite-tag">
+                      <button type="button" class="cite-pill">Ref: Drives &amp; Motion Control</button>
+                      <span class="cite-card"><strong>Conveyor Power Train &amp; Controls</strong>Motor (AC induction gearmotor or BLDC/stepper) &rarr; transmission (timing belt, chain, or direct-drive gearbox) &rarr; head roller. Speed governed by VFDs or digital stepper controllers.</span>
+                    </span>
+                  </h4>
+                  <ul>
+                    <li><strong>Drive Motors:</strong> Most factory conveyors are driven by AC induction gearmotors (for continuous fixed-speed bulk transfer) or brushless DC / stepper motors (where precise indexing, start/stop positioning, and step-distance calibration are essential).</li>
+                    <li><strong>Transmission:</strong> Power transfers from the motor drive shaft to the head roller via timing belts, drive chains, or direct-drive gearboxes.</li>
+                    <li><strong>Speed &amp; Motion Control:</strong> Modern conveyor speeds are governed by Variable Frequency Drives (VFDs) or digital stepper controllers, enabling software to coordinate speed matching, ramp up acceleration smoothly to avoid material slippage, and stop on exact sensor coordinates.</li>
+                  </ul>
+                </div>
+
                 <div class="primer-interactive-item categorization-card" data-primer="prim-conv-cat">
                   <h4>
-                    <span>5. Equipment Categorization: xTool Auto Streamline™</span>
+                    <span>6. Equipment Categorization: xTool Auto Streamline™</span>
                     <span class="cite-tag">
                       <button type="button" class="cite-pill">Doc: P.01, 09-10</button>
                       <span class="cite-card"><strong>Official Conveyor Taxonomy</strong>Integrated Synchronous Flat-Belt Micro-Conveyor with Closed-Loop Stepper Positioning (right-to-left feed, machine vision indexing).</span>
@@ -1032,15 +1047,15 @@
             <span class="eyebrow-tick" aria-hidden="true"></span>
             <span>Operator Knowledge Verification</span>
           </div>
-          <h3>Conveyor Diagnostic &amp; Troubleshooting Assessment</h3>
-          <p class="section-sub">Test your operational problem-solving skills across hardware mounting, enclosure clearance, and large material processing rules.</p>
+          <h3>xTool Conveyor Diagnostic &amp; Troubleshooting Assessment</h3>
+          <p class="section-sub">Test everything covered above: conveyor history, geometries, drive motors and motion control, safety baselines, hardware docking, XCS configuration, step calibration, and batch / large-material processing. Select an answer to see its explanation.</p>
         </div>
 
         <div id="conveyorQuizContainer" class="quiz-container"></div>
 
         <div id="conveyorQuizScoreCard" class="quiz-score-card" style="display: none;">
           <h4>Assessment Complete</h4>
-          <p class="score-display" id="convScoreText">You scored 4 / 4</p>
+          <p class="score-display" id="convScoreText"></p>
           <p class="score-evaluation" id="convEvalText"></p>
           <button class="btn btn-ghost" id="resetConvQuizBtn" type="button" style="margin-top:1rem; cursor:pointer;">Retake Assessment</button>
         </div>
@@ -1377,6 +1392,74 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
       `
     },
+    'prim-conv-drives': {
+      title: 'CONVEYOR POWER TRAIN',
+      status: 'MOTOR → TRANSMISSION → HEAD ROLLER',
+      captionTitle: 'Drive Motors, Transmission & Motion Control',
+      captionDesc: 'A gearmotor or stepper turns the head roller through a timing belt, chain, or gearbox. A VFD or stepper controller ramps speed up smoothly to avoid slippage and stops the belt when a sensor detects the part.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <!-- Controller (VFD / stepper driver) with speed ramp profile -->
+          <rect x="20" y="22" width="112" height="80" rx="4" fill="#111822" stroke="#6fb2dd" stroke-width="1.5"/>
+          <text x="76" y="36" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="7.5" font-weight="700" text-anchor="middle">VFD / STEPPER CTRL</text>
+          <line x1="30" y1="82" x2="122" y2="82" stroke="#2c3b4a"/>
+          <line x1="30" y1="44" x2="30" y2="82" stroke="#2c3b4a"/>
+          <path d="M 30 82 L 52 50 L 100 50 L 122 82" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle r="3" fill="#4ade80">
+            <animateMotion path="M 30 82 L 52 50 L 100 50 L 122 82" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <text x="41" y="94" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="6" text-anchor="middle">RAMP</text>
+          <text x="76" y="94" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="6" text-anchor="middle">RUN</text>
+          <text x="111" y="94" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="6" text-anchor="middle">STOP</text>
+
+          <!-- Control signal to motor -->
+          <path d="M 76 102 V 118" stroke="#6fb2dd" stroke-width="1.5" stroke-dasharray="3 3" style="animation: feedBelt 1.2s infinite linear;"/>
+
+          <!-- Motor + gearbox -->
+          <rect x="40" y="118" width="62" height="40" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+          <text x="71" y="135" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="7.5" font-weight="700" text-anchor="middle">MOTOR</text>
+          <text x="71" y="147" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="6" text-anchor="middle">AC/BLDC/STEP</text>
+          <rect x="102" y="128" width="16" height="20" fill="#2c3b4a" stroke="#93a4b4"/>
+
+          <!-- Drive pulley on motor shaft -->
+          <g style="transform-origin: 126px 138px; animation: spinFan 2s infinite linear;">
+            <circle cx="126" cy="138" r="9" fill="#111822" stroke="#f2a93b" stroke-width="2"/>
+            <line x1="126" y1="130" x2="126" y2="146" stroke="#f2a93b" stroke-width="1.5"/>
+          </g>
+
+          <!-- Timing belt transmission to head roller -->
+          <path d="M 126 129 L 300 175 M 126 147 L 300 201" stroke="#93a4b4" stroke-width="2" stroke-dasharray="5 3" style="animation: feedBelt 2s infinite linear;"/>
+          <text x="200" y="141" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="7" text-anchor="middle" transform="rotate(15 200 141)">TIMING BELT / CHAIN</text>
+
+          <!-- Conveyor belt: tail roller left, head (drive) roller right -->
+          <circle cx="160" cy="232" r="13" fill="#1b2530" stroke="#93a4b4" stroke-width="2"/>
+          <g style="transform-origin: 300px 188px; animation: spinFan 2s infinite linear;">
+            <circle cx="300" cy="188" r="13" fill="#1b2530" stroke="#f2a93b" stroke-width="2.5"/>
+            <line x1="300" y1="176" x2="300" y2="200" stroke="#f2a93b" stroke-width="1.5"/>
+            <line x1="288" y1="188" x2="312" y2="188" stroke="#f2a93b" stroke-width="1.5"/>
+          </g>
+          <text x="300" y="166" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="7" text-anchor="middle">HEAD ROLLER</text>
+          <path d="M 160 219 L 300 175" stroke="#4b5b6b" stroke-width="3"/>
+          <path d="M 160 245 L 300 201" stroke="#4b5b6b" stroke-width="3"/>
+
+          <!-- Part riding the belt toward the stop sensor -->
+          <rect x="-9" y="-14" width="18" height="12" rx="1.5" fill="#2c3b4a" stroke="#4ade80" stroke-width="1.5">
+            <animateMotion path="M 170 216 L 268 185" keyPoints="0;0.15;0.85;1;1" keyTimes="0;0.25;0.6;0.75;1" calcMode="spline" keySplines="0.4 0 1 1;0 0 1 1;0 0 0.6 1;0 0 1 1" dur="4s" repeatCount="indefinite" rotate="auto"/>
+          </rect>
+
+          <!-- Photo-eye stop sensor -->
+          <rect x="324" y="130" width="34" height="18" rx="3" fill="#111822" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="341" y="142" fill="#ef4444" font-family="'IBM Plex Mono', monospace" font-size="7" font-weight="700" text-anchor="middle">SENSOR</text>
+          <line x1="324" y1="146" x2="272" y2="170" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2">
+            <animate attributeName="opacity" values="0.25;0.25;1;1;0.25" keyTimes="0;0.6;0.7;0.95;1" dur="4s" repeatCount="indefinite"/>
+          </line>
+
+          <text x="250" y="40" fill="#4ade80" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Ramp up → Run → Stop</text>
+          <text x="250" y="54" fill="#93a4b4" font-family="'IBM Plex Mono', monospace" font-size="8" text-anchor="middle">on exact sensor coordinate</text>
+          <text x="250" y="270" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">Controller → Motor → Transmission → Belt</text>
+        </svg>
+      `
+    },
     'prim-conv-cat': {
       title: 'STEPPER FLAT-BELT MICRO-CONVEYOR',
       status: 'XTOOL AUTO STREAMLINE TAXONOMY',
@@ -1457,8 +1540,19 @@ document.addEventListener('DOMContentLoaded', () => {
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="60" y="60" width="260" height="160" rx="4" fill="#111822" stroke="#2c3b4a" stroke-width="2"/>
           <rect x="90" y="85" width="200" height="110" fill="none" stroke="#6fb2dd" stroke-dasharray="4 4"/>
-          <path d="M 100 100 L 280 100 L 110 140 L 270 140 L 120 180 L 260 180" fill="none" stroke="#f2a93b" stroke-width="2.5" style="stroke-dasharray: 600; stroke-dashoffset: 600; animation: drawCircuit 1.5s infinite linear;"/>
-          <circle cx="260" cy="180" r="5" fill="#f2a93b" style="animation: pulseLaser 0.4s infinite;"/>
+          <rect x="160" y="22" width="60" height="22" rx="3" fill="#1b2530" stroke="#f2a93b" stroke-width="1.5"/>
+          <text x="190" y="37" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">GALVO</text>
+          <path d="M 100 100 L 280 100 L 110 140 L 270 140 L 120 180 L 260 180" fill="none" stroke="#2c3b4a" stroke-width="1" stroke-dasharray="3 4"/>
+          <path d="M 100 100 L 280 100 L 110 140 L 270 140 L 120 180 L 260 180" pathLength="100" fill="none" stroke="#f2a93b" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="100">
+            <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;0.75;1" dur="2.8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.8;1" dur="2.8s" repeatCount="indefinite"/>
+          </path>
+          <g>
+            <circle r="9" fill="#f2a93b" opacity="0.25"/>
+            <circle r="4.5" fill="#fff3d6" stroke="#f2a93b" stroke-width="1.5"/>
+            <animateMotion path="M 100 100 L 280 100 L 110 140 L 270 140 L 120 180 L 260 180" keyPoints="0;1;1" keyTimes="0;0.75;1" calcMode="linear" dur="2.8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.8;1" dur="2.8s" repeatCount="indefinite"/>
+          </g>
           <text x="190" y="78" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="9" text-anchor="middle">220 mm × 220 mm Native Galvanometer Field</text>
           <text x="190" y="240" fill="#f2a93b" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">10,000 mm/s Linear Galvo Sweep</text>
         </svg>
@@ -1699,7 +1793,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <svg class="stage-svg" viewBox="0 0 380 280">
           <rect x="80" y="70" width="220" height="130" rx="6" fill="#161f2a" stroke="#2c3b4a"/>
           <circle cx="190" cy="135" r="40" fill="#111822" stroke="#6fb2dd" stroke-width="2"/>
-          <path d="M 190 135 L 180 100 A 15 15 0 0 1 200 100 Z M 190 135 L 225 125 A 15 15 0 0 1 225 145 Z M 190 135 L 180 170 A 15 15 0 0 1 160 160 Z" fill="#f2a93b" style="transform-origin: 190px 135px; animation: drawCircuit 1s infinite linear;"/>
+          <path d="M 190 135 L 180 100 A 15 15 0 0 1 200 100 Z M 190 135 L 225 125 A 15 15 0 0 1 225 145 Z M 190 135 L 180 170 A 15 15 0 0 1 160 160 Z" fill="#f2a93b" style="transform-origin: 190px 135px; animation: spinFan 1s infinite linear;"/>
           <text x="190" y="240" fill="#6fb2dd" font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">Ensures zero smoke escape through enclosure</text>
         </svg>
       `
@@ -1754,6 +1848,449 @@ document.addEventListener('DOMContentLoaded', () => {
   updateF1Stage('f1-duallaser');
 
   // ==========================================================
+  // Conveyor Chapter Stage Scenes
+  // ==========================================================
+  const MONO = "font-family=\"'IBM Plex Mono', monospace\"";
+  const convBelt = (y = 175) => `
+          <rect x="40" y="${y}" width="300" height="22" rx="11" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
+          <circle cx="51" cy="${y + 11}" r="9" fill="#111822" stroke="#93a4b4" stroke-width="1.5"/>
+          <circle cx="329" cy="${y + 11}" r="9" fill="#111822" stroke="#93a4b4" stroke-width="1.5"/>
+          <line x1="60" y1="${y + 2}" x2="320" y2="${y + 2}" stroke="#f2a93b" stroke-width="2" stroke-dasharray="10 8" style="animation: feedBelt 1.6s infinite linear reverse;"/>`;
+
+  const convStageScenes = {
+    'c1-enclosure': {
+      title: 'ENCLOSURE SHIELD CLEARANCE',
+      status: 'SAFETY INTERLOCK: ≤ 5 mm',
+      captionTitle: 'Protective Enclosure Height Regulation',
+      captionDesc: 'Per manufacturer guidelines (Quick Start Guide P. 09 & 10), pull down the protective enclosure until it rests no more than 5 mm above the material surface prior to commencing any laser operation.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="140" y="30" width="100" height="40" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+          <text x="190" y="54" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">F1 ULTRA HEAD</text>
+          <g style="animation: lowerShield5mm 3.5s infinite ease-in-out;">
+            <rect x="110" y="70" width="160" height="88" rx="3" fill="#4ade80" fill-opacity="0.12" stroke="#4ade80" stroke-width="2"/>
+            <text x="190" y="118" fill="#4ade80" ${MONO} font-size="9" text-anchor="middle">PROTECTIVE ENCLOSURE</text>
+          </g>
+          <rect x="130" y="163" width="120" height="12" fill="#2c3b4a" stroke="#93a4b4"/>
+          ${convBelt(175)}
+          <line x1="285" y1="158" x2="285" y2="163" stroke="#ef4444" stroke-width="2"/>
+          <text x="292" y="164" fill="#ef4444" ${MONO} font-size="9">≤ 5 mm</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Lower shield to ≤ 5 mm above material</text>
+        </svg>
+      `
+    },
+    'c1-estop': {
+      title: 'EMERGENCY STOP ACCESS',
+      status: 'UNOBSTRUCTED REACH ZONE',
+      captionTitle: 'E-Stop Line-of-Sight & Reach',
+      captionDesc: 'Keep a clear line of sight and immediate physical reach to the F1 Ultra red emergency stop button whenever the conveyor is running. Never stack materials or tools in front of it.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="80" y="55" width="220" height="150" rx="6" fill="#161f2a" stroke="#2c3b4a" stroke-width="2"/>
+          <circle cx="190" cy="130" r="40" fill="none" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+          <circle cx="190" cy="130" r="24" fill="#2c3b4a" stroke="#ef4444" stroke-width="2"/>
+          <circle cx="190" cy="130" r="14" fill="#ef4444" style="animation: pulseEStop 1.8s infinite ease-in-out;"/>
+          <text x="190" y="85" fill="#ef4444" ${MONO} font-size="9" font-weight="700" text-anchor="middle">E-STOP</text>
+          <g style="animation: reachHand 3s infinite ease-in-out;">
+            <path d="M 222 150 q 8 -6 16 0 l 22 22 q 4 8 -4 10 l -30 -14 z" fill="#f2c9a0" stroke="#d97706" stroke-width="1.2"/>
+          </g>
+          <text x="190" y="240" fill="#f87171" ${MONO} font-size="11" text-anchor="middle">Clear path to E-Stop at all times</text>
+        </svg>
+      `
+    },
+    'c1-hand-safety': {
+      title: 'ACTIVE PROCESSING ZONE',
+      status: 'HANDS-OFF LASER AREA',
+      captionTitle: 'Keep Hands Away from the Processing Area',
+      captionDesc: 'Quick Start Guide P. 09: when placing materials during processing, keep your hands away from the central processing area to avoid skin injuries. Load parts only at the right-hand infeed.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="150" y="60" width="80" height="115" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="190" y="52" fill="#ef4444" ${MONO} font-size="9" font-weight="700" text-anchor="middle">LASER ZONE</text>
+          <polygon points="190,62 182,160 198,160" fill="url(#laserCone)" style="animation: pulseLaser 0.8s infinite;"/>
+          ${convBelt(175)}
+          <rect x="262" y="163" width="30" height="12" fill="#2c3b4a" stroke="#4ade80"/>
+          <text x="277" y="152" fill="#4ade80" ${MONO} font-size="8" text-anchor="middle">LOAD HERE</text>
+          <g style="animation: reachHand 3.2s infinite ease-in-out;">
+            <path d="M 245 110 q 8 -6 16 0 l 22 22 q 4 8 -4 10 l -30 -14 z" fill="#f2c9a0" stroke="#d97706" stroke-width="1.2"/>
+          </g>
+          <text x="190" y="240" fill="#f87171" ${MONO} font-size="11" text-anchor="middle">Never reach into the beam path</text>
+        </svg>
+      `
+    },
+    'c1-overlap': {
+      title: 'SUBSTRATE BOUNDARY RULE',
+      status: 'IDENTICAL • NO TOUCH • NO OVERLAP',
+      captionTitle: 'Material Placement on the Belt',
+      captionDesc: 'Quick Start Guide P. 09: use identical materials and ensure the pieces do not touch or overlap with each other, so the camera can detect each blank individually.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <text x="110" y="70" fill="#4ade80" ${MONO} font-size="10" font-weight="700" text-anchor="middle">✓ CORRECT</text>
+          <rect x="55" y="85" width="30" height="30" rx="2" fill="#2c3b4a" stroke="#4ade80" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.5s ease both;"/>
+          <rect x="95" y="85" width="30" height="30" rx="2" fill="#2c3b4a" stroke="#4ade80" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.5s ease 0.15s both;"/>
+          <rect x="135" y="85" width="30" height="30" rx="2" fill="#2c3b4a" stroke="#4ade80" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.5s ease 0.3s both;"/>
+          <text x="270" y="70" fill="#ef4444" ${MONO} font-size="10" font-weight="700" text-anchor="middle">✗ INCORRECT</text>
+          <rect x="230" y="85" width="30" height="30" rx="2" fill="#2c3b4a" stroke="#ef4444"/>
+          <rect x="250" y="95" width="30" height="30" rx="2" fill="#2c3b4a" stroke="#ef4444" opacity="0.85"/>
+          <circle cx="300" cy="105" r="14" fill="#2c3b4a" stroke="#ef4444"/>
+          <line x1="225" y1="80" x2="320" y2="135" stroke="#ef4444" stroke-width="2"/>
+          ${convBelt(150)}
+          <text x="190" y="215" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">Identical blanks, spaced apart</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">No touching • No overlapping • No mixing</text>
+        </svg>
+      `
+    },
+    'c2-pieceB': {
+      title: 'MOUNT FASTENING PIECE B',
+      status: 'CONVEYOR SIDE',
+      captionTitle: 'Step 1: Fastening Piece B to Conveyor',
+      captionDesc: 'Quick Start Guide P. 06: place fastening piece B in the correct direction on the conveyor and secure it with two M4×10 screws using the 3 mm screwdriver.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="60" y="150" width="260" height="45" rx="4" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="190" y="178" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">CONVEYOR FRAME</text>
+          <g style="animation: bracketDescendSmooth 3.6s infinite ease-in-out;">
+            <rect x="140" y="128" width="100" height="22" rx="2" fill="#2c3b4a" stroke="#6fb2dd" stroke-width="2"/>
+            <text x="190" y="143" fill="#6fb2dd" ${MONO} font-size="9" font-weight="700" text-anchor="middle">PIECE B</text>
+          </g>
+          <g style="animation: screwsDriveSmooth 3.6s infinite ease-in-out;">
+            <rect x="152" y="100" width="6" height="22" fill="#e2e8f0"/><rect x="148" y="96" width="14" height="5" fill="#93a4b4"/>
+            <rect x="222" y="100" width="6" height="22" fill="#e2e8f0"/><rect x="218" y="96" width="14" height="5" fill="#93a4b4"/>
+          </g>
+          <text x="190" y="70" fill="#f2a93b" ${MONO} font-size="10" text-anchor="middle">2 × M4×10 • 3 mm Screwdriver</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Verify bracket orientation before tightening</text>
+        </svg>
+      `
+    },
+    'c2-pieceA': {
+      title: 'MOUNT FASTENING PIECE A',
+      status: 'F1 ULTRA BASE',
+      captionTitle: 'Step 2: Fastening Piece A to the F1 Ultra',
+      captionDesc: 'Quick Start Guide P. 07: attach fastening piece A to the F1 Ultra base with two M4×10 screws and the 3 mm screwdriver.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="70" y="60" width="240" height="90" rx="6" fill="#161f2a" stroke="#f2a93b" stroke-width="2"/>
+          <text x="190" y="100" fill="#f2a93b" ${MONO} font-size="10" font-weight="700" text-anchor="middle">xTool F1 ULTRA</text>
+          <rect x="70" y="150" width="240" height="14" fill="#1b2530" stroke="#2c3b4a"/>
+          <g style="animation: bracketDescendSmooth 3.6s infinite ease-in-out;">
+            <rect x="140" y="164" width="100" height="22" rx="2" fill="#2c3b4a" stroke="#4ade80" stroke-width="2"/>
+            <text x="190" y="179" fill="#4ade80" ${MONO} font-size="9" font-weight="700" text-anchor="middle">PIECE A</text>
+          </g>
+          <g style="animation: screwsDriveSmooth 3.6s infinite ease-in-out;">
+            <rect x="152" y="190" width="6" height="18" fill="#e2e8f0"/><rect x="148" y="206" width="14" height="5" fill="#93a4b4"/>
+            <rect x="222" y="190" width="6" height="18" fill="#e2e8f0"/><rect x="218" y="206" width="14" height="5" fill="#93a4b4"/>
+          </g>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">2 × M4×10 into F1 Ultra base</text>
+        </svg>
+      `
+    },
+    'c2-mate': {
+      title: 'ALIGN & JOIN BRACKETS',
+      status: 'PIECE A ⇄ PIECE B',
+      captionTitle: 'Step 3: Align Holes and Secure',
+      captionDesc: 'Quick Start Guide P. 07: align the holes on fastening pieces A and B, then join them with two M4×10 screws to rigidly dock the conveyor to the laser.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="40" y="70" width="140" height="80" rx="5" fill="#161f2a" stroke="#f2a93b" stroke-width="2"/>
+          <text x="110" y="113" fill="#f2a93b" ${MONO} font-size="9" text-anchor="middle">F1 ULTRA</text>
+          <rect x="200" y="120" width="140" height="40" rx="5" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="270" y="144" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">CONVEYOR</text>
+          <rect x="150" y="150" width="70" height="16" fill="#2c3b4a" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="165" y="182" fill="#4ade80" ${MONO} font-size="8" text-anchor="middle">A</text>
+          <g style="animation: bracketDescendSmooth 3.6s infinite ease-in-out;">
+            <rect x="160" y="134" width="70" height="16" fill="#2c3b4a" stroke="#6fb2dd" stroke-width="1.5" opacity="0.9"/>
+            <text x="225" y="128" fill="#6fb2dd" ${MONO} font-size="8" text-anchor="middle">B</text>
+          </g>
+          <circle cx="175" cy="150" r="3" fill="#0f161f" stroke="#f2a93b"/>
+          <circle cx="205" cy="150" r="3" fill="#0f161f" stroke="#f2a93b"/>
+          <g style="animation: screwsDriveSmooth 3.6s infinite ease-in-out;">
+            <rect x="172" y="110" width="6" height="20" fill="#e2e8f0"/><rect x="168" y="106" width="14" height="5" fill="#93a4b4"/>
+            <rect x="202" y="110" width="6" height="20" fill="#e2e8f0"/><rect x="198" y="106" width="14" height="5" fill="#93a4b4"/>
+          </g>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Holes aligned → 2 × M4×10 secured</text>
+        </svg>
+      `
+    },
+    'c2-cable': {
+      title: 'CONNECTION CABLE INTERFACE',
+      status: 'CONVEYOR PORT → F1 PERIPHERAL',
+      captionTitle: 'Step 4: Plug In the Connection Cable',
+      captionDesc: 'Quick Start Guide P. 08: plug the 90° elbow connection cable into the side port of the conveyor and the peripheral port of the F1 Ultra. This link carries motor power and index signals.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="40" y="60" width="150" height="90" rx="6" fill="#161f2a" stroke="#f2a93b" stroke-width="2"/>
+          <text x="115" y="100" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">F1 ULTRA</text>
+          <rect x="178" y="110" width="12" height="16" fill="#0d141e" stroke="#6fb2dd"/>
+          <text x="115" y="140" fill="#93a4b4" ${MONO} font-size="7.5" text-anchor="middle">PERIPHERAL PORT</text>
+          <rect x="210" y="160" width="140" height="40" rx="5" fill="#1b2530" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="280" y="184" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">CONVEYOR</text>
+          <rect x="338" y="168" width="12" height="14" fill="#0d141e" stroke="#6fb2dd"/>
+          <path d="M 190 118 H 260 Q 360 118 360 145 V 175 H 350" fill="none" stroke="#6fb2dd" stroke-width="4"/>
+          <path d="M 190 118 H 260 Q 360 118 360 145 V 175 H 350" fill="none" stroke="#f2a93b" stroke-width="2" stroke-dasharray="6 10" style="animation: feedBelt 1.4s infinite linear;"/>
+          <text x="275" y="110" fill="#6fb2dd" ${MONO} font-size="8" text-anchor="middle">90° ELBOW CABLE</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Power + step-index signal link</text>
+        </svg>
+      `
+    },
+    'c3-connect': {
+      title: 'XCS DEVICE CONNECTION',
+      status: 'USB-C / Wi-Fi LINK',
+      captionTitle: 'Connect the F1 Ultra to XCS',
+      captionDesc: 'Connect the F1 Ultra over USB-C or local Wi-Fi and confirm the XCS device dashboard reads Connected before changing any conveyor settings.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="40" y="70" width="130" height="85" rx="4" fill="#161f2a" stroke="#6fb2dd" stroke-width="2"/>
+          <rect x="25" y="155" width="160" height="8" rx="2" fill="#2c3b4a"/>
+          <text x="105" y="95" fill="#6fb2dd" ${MONO} font-size="9" text-anchor="middle">XCS</text>
+          <rect x="60" y="110" width="90" height="20" rx="3" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" style="animation: pulseLaser 1.6s infinite;"/>
+          <text x="105" y="124" fill="#4ade80" ${MONO} font-size="9" text-anchor="middle">● Connected</text>
+          <rect x="240" y="80" width="110" height="70" rx="5" fill="#161f2a" stroke="#f2a93b" stroke-width="2"/>
+          <text x="295" y="119" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">F1 ULTRA</text>
+          <line x1="170" y1="115" x2="240" y2="115" stroke="#f2a93b" stroke-width="2" stroke-dasharray="6 6" style="animation: feedBelt 1.2s infinite linear;"/>
+          <text x="205" y="105" fill="#93a4b4" ${MONO} font-size="8" text-anchor="middle">USB-C / Wi-Fi</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Dashboard status must read Connected</text>
+        </svg>
+      `
+    },
+    'c3-settings': {
+      title: 'DEVICE SETTINGS',
+      status: 'GEAR ICON → DEVICE CARD',
+      captionTitle: 'Open Device Settings in XCS',
+      captionDesc: 'Click the gear icon next to the F1 Ultra device card in XCS to open device settings, where the working mode and accessory options live.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="70" y="60" width="240" height="140" rx="6" fill="#161f2a" stroke="#2c3b4a" stroke-width="2"/>
+          <rect x="70" y="60" width="240" height="24" fill="#111822"/>
+          <text x="82" y="76" fill="#6fb2dd" ${MONO} font-size="9">xTool Creative Space</text>
+          <rect x="90" y="100" width="200" height="50" rx="4" fill="#1b2530" stroke="#f2a93b"/>
+          <text x="105" y="122" fill="#e7ecf1" ${MONO} font-size="10">F1 Ultra</text>
+          <text x="105" y="138" fill="#4ade80" ${MONO} font-size="8">● Connected</text>
+          <g style="transform-origin: 265px 125px; animation: spinFan 3s infinite linear;">
+            <circle cx="265" cy="125" r="11" fill="none" stroke="#f2a93b" stroke-width="4" stroke-dasharray="4 3"/>
+            <circle cx="265" cy="125" r="5" fill="#f2a93b"/>
+          </g>
+          <text x="190" y="180" fill="#f2a93b" ${MONO} font-size="9" text-anchor="middle">⚙ Device Settings</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Gear icon beside the device card</text>
+        </svg>
+      `
+    },
+    'c3-mode': {
+      title: 'WORKING MODE: CONVEYOR',
+      status: 'AUTO-STREAM / LONG MATERIAL',
+      captionTitle: 'Switch from Regular Surface to Conveyor',
+      captionDesc: 'Under Working Mode, change from Regular Surface to Conveyor, then choose Auto-Stream for batches or Long Material for oversized pass-through parts.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="80" y="50" width="220" height="165" rx="6" fill="#161f2a" stroke="#2c3b4a" stroke-width="2"/>
+          <text x="190" y="72" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">WORKING MODE</text>
+          <rect x="100" y="84" width="180" height="26" rx="3" fill="#111822" stroke="#2c3b4a"/>
+          <text x="190" y="101" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle" text-decoration="line-through">Regular Surface</text>
+          <rect x="100" y="118" width="180" height="26" rx="3" fill="#f2a93b" fill-opacity="0.15" stroke="#f2a93b" stroke-width="2" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.6s ease both;"/>
+          <text x="190" y="135" fill="#f2a93b" ${MONO} font-size="10" font-weight="700" text-anchor="middle">▶ Conveyor</text>
+          <rect x="110" y="156" width="78" height="22" rx="3" fill="#1b2530" stroke="#4ade80" style="animation: pulseLaser 1.6s infinite;"/>
+          <text x="149" y="171" fill="#4ade80" ${MONO} font-size="8" text-anchor="middle">Auto-Stream</text>
+          <rect x="194" y="156" width="78" height="22" rx="3" fill="#1b2530" stroke="#6fb2dd"/>
+          <text x="233" y="171" fill="#6fb2dd" ${MONO} font-size="8" text-anchor="middle">Long Material</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Mode switch enables stepper indexing</text>
+        </svg>
+      `
+    },
+    'c3-vector': {
+      title: 'FEED VECTOR VERIFICATION',
+      status: 'RIGHT → LEFT PROGRESSION',
+      captionTitle: 'Match Software Arrows to Physical Flow',
+      captionDesc: 'Confirm the XCS feed-direction arrows match the physical conveyor: material enters on the right and travels to the left (Quick Start Guide P. 10).',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <text x="190" y="62" fill="#6fb2dd" ${MONO} font-size="9" text-anchor="middle">XCS FEED ARROW</text>
+          <path d="M 290 80 H 100" stroke="#6fb2dd" stroke-width="3"/>
+          <polygon points="90,80 104,72 104,88" fill="#6fb2dd"/>
+          ${convBelt(150)}
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; -190,0" dur="3s" repeatCount="indefinite"/>
+            <rect x="275" y="130" width="26" height="20" rx="2" fill="#2c3b4a" stroke="#f2a93b"/>
+          </g>
+          <text x="330" y="125" fill="#93a4b4" ${MONO} font-size="8" text-anchor="middle">IN</text>
+          <text x="50" y="125" fill="#93a4b4" ${MONO} font-size="8" text-anchor="middle">OUT</text>
+          <text x="190" y="205" fill="#f2a93b" ${MONO} font-size="9" text-anchor="middle">PHYSICAL BELT FLOW ←</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Software vector = physical vector</text>
+        </svg>
+      `
+    },
+    'c4-focus': {
+      title: 'DUAL-DOT OPTICAL FOCUS',
+      status: 'Z-HEIGHT CONVERGENCE',
+      captionTitle: 'Automated Dual-Dot Focus',
+      captionDesc: 'Place flat test material on the belt and run the automated focus: two red pointer dots converge into one when the galvo head reaches the correct focal height.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="140" y="40" width="100" height="40" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+          <text x="190" y="64" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">GALVO HEAD</text>
+          <rect x="120" y="140" width="140" height="10" fill="#2c3b4a" stroke="#93a4b4"/>
+          ${convBelt(150)}
+          <line x1="165" y1="80" x2="190" y2="140" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+          <line x1="215" y1="80" x2="190" y2="140" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+          <circle cx="160" cy="140" r="4" fill="#ef4444">
+            <animate attributeName="cx" values="150;190;190;150" keyTimes="0;0.5;0.8;1" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="220" cy="140" r="4" fill="#ef4444">
+            <animate attributeName="cx" values="230;190;190;230" keyTimes="0;0.5;0.8;1" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <text x="190" y="120" fill="#4ade80" ${MONO} font-size="9" text-anchor="middle">
+            FOCUSED
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.8;1" dur="3s" repeatCount="indefinite"/>
+          </text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Two dots merge → focal plane locked</text>
+        </svg>
+      `
+    },
+    'c4-mark': {
+      title: 'STEP CALIBRATION MARKS',
+      status: 'BURN 100.00 mm REFERENCE',
+      captionTitle: 'Settings → Accessory → Conveyor → Step Calibration',
+      captionDesc: 'Run the step calibration job: the laser burns a mark, the conveyor indexes a commanded 100.00 mm, and a second mark is burned for measurement.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="140" y="40" width="100" height="36" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+          <text x="190" y="62" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">F1 ULTRA</text>
+          <polygon points="190,76 185,135 195,135" fill="url(#laserCone)" style="animation: pulseLaser 0.6s infinite;"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -100,0; -100,0" keyTimes="0;0.3;0.7;1" dur="4s" repeatCount="indefinite"/>
+            <rect x="160" y="135" width="160" height="14" fill="#2c3b4a" stroke="#93a4b4"/>
+            <line x1="190" y1="135" x2="190" y2="149" stroke="#f2a93b" stroke-width="2.5"/>
+            <line x1="290" y1="135" x2="290" y2="149" stroke="#f2a93b" stroke-width="2.5">
+              <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7;0.72;1" dur="4s" repeatCount="indefinite"/>
+            </line>
+          </g>
+          ${convBelt(150)}
+          <text x="190" y="200" fill="#f2a93b" ${MONO} font-size="10" text-anchor="middle">Commanded index: 100.00 mm</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Mark → Index → Mark</text>
+        </svg>
+      `
+    },
+    'c4-measure': {
+      title: 'CALIPER MEASUREMENT',
+      status: 'CENTER-TO-CENTER DISTANCE',
+      captionTitle: 'Measure and Enter the Actual Distance',
+      captionDesc: 'Measure the center-to-center distance between the two burned marks with digital calipers, then enter the observed value so XCS can rescale the stepper step distance.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="60" y="150" width="260" height="16" fill="#2c3b4a" stroke="#93a4b4"/>
+          <line x1="110" y1="150" x2="110" y2="166" stroke="#f2a93b" stroke-width="2.5"/>
+          <line x1="270" y1="150" x2="270" y2="166" stroke="#f2a93b" stroke-width="2.5"/>
+          <rect x="70" y="90" width="250" height="14" fill="#93a4b4"/>
+          <rect x="104" y="90" width="12" height="58" fill="#cbd5e1"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="40,0; 0,0; 0,0; 40,0" keyTimes="0;0.4;0.8;1" dur="3.6s" repeatCount="indefinite"/>
+            <rect x="264" y="90" width="12" height="58" fill="#cbd5e1"/>
+            <rect x="240" y="58" width="70" height="28" rx="3" fill="#111822" stroke="#6fb2dd"/>
+            <text x="275" y="77" fill="#4ade80" ${MONO} font-size="11" font-weight="700" text-anchor="middle">98.40</text>
+          </g>
+          <text x="190" y="200" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">Nominal 100.00 mm vs. measured 98.40 mm</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Enter reading → XCS auto-scales steps</text>
+        </svg>
+      `
+    },
+    'c5-array': {
+      title: 'BATCH STAGING',
+      status: 'CAMERA DETECTING BLANKS',
+      captionTitle: 'Stage Identical Blanks Without Contact',
+      captionDesc: 'Scatter identical blanks across the belt so none touch or overlap. The overhead camera scans the belt to detect the position and rotation of every piece.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="70" y="50" width="240" height="140" rx="4" fill="#111822" stroke="#2c3b4a" stroke-width="2"/>
+          <rect x="95" y="70" width="34" height="34" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <rect x="165" y="78" width="34" height="34" rx="2" fill="#2c3b4a" stroke="#4ade80" transform="rotate(12 182 95)"/>
+          <rect x="240" y="68" width="34" height="34" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <rect x="110" y="130" width="34" height="34" rx="2" fill="#2c3b4a" stroke="#4ade80" transform="rotate(-10 127 147)"/>
+          <rect x="190" y="135" width="34" height="34" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <rect x="255" y="128" width="34" height="34" rx="2" fill="#2c3b4a" stroke="#4ade80" transform="rotate(8 272 145)"/>
+          <line x1="72" y1="120" x2="308" y2="120" stroke="#6fb2dd" stroke-width="2" style="animation: camScan 2.6s infinite ease-in-out;"/>
+          <text x="190" y="215" fill="#6fb2dd" ${MONO} font-size="9" text-anchor="middle">Camera scan: 6 blanks detected</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Identical • spaced • non-overlapping</text>
+        </svg>
+      `
+    },
+    'c5-smartfill': {
+      title: 'SMART FILL',
+      status: 'ARTWORK DUPLICATED TO ALL BLANKS',
+      captionTitle: 'One Design, Every Detected Part',
+      captionDesc: 'Position the artwork on a master part, then click Smart Fill: XCS copies and aligns the design onto every blank the camera detected, matching each part’s rotation.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="70" y="50" width="240" height="140" rx="4" fill="#111822" stroke="#2c3b4a" stroke-width="2"/>
+          <g>
+            <rect x="95" y="70" width="40" height="40" rx="2" fill="#2c3b4a" stroke="#f2a93b" stroke-width="2"/>
+            <circle cx="115" cy="90" r="10" fill="none" stroke="#f2a93b" stroke-width="2"/>
+            <text x="115" y="124" fill="#f2a93b" ${MONO} font-size="7" text-anchor="middle">MASTER</text>
+          </g>
+          <rect x="170" y="70" width="40" height="40" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <circle cx="190" cy="90" r="10" fill="none" stroke="#4ade80" stroke-width="2" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.6s ease 0.3s both;"/>
+          <rect x="245" y="70" width="40" height="40" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <circle cx="265" cy="90" r="10" fill="none" stroke="#4ade80" stroke-width="2" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.6s ease 0.6s both;"/>
+          <rect x="130" y="135" width="40" height="40" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <circle cx="150" cy="155" r="10" fill="none" stroke="#4ade80" stroke-width="2" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.6s ease 0.9s both;"/>
+          <rect x="210" y="135" width="40" height="40" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+          <circle cx="230" cy="155" r="10" fill="none" stroke="#4ade80" stroke-width="2" style="transform-box: fill-box; transform-origin: center; animation: popBox 0.6s ease 1.2s both;"/>
+          <text x="190" y="215" fill="#f2a93b" ${MONO} font-size="9" text-anchor="middle">[ Smart Fill ] → 5 / 5 placed</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Automatic artwork duplication</text>
+        </svg>
+      `
+    },
+    'c5-large': {
+      title: 'LARGE MATERIAL MODE',
+      status: '≤ 500 mm • CENTRAL LINE ONLY',
+      captionTitle: 'Central Line Processing Rule',
+      captionDesc: 'Quick Start Guide P. 10: with large materials (up to 500 mm), the laser fires only on the conveyor’s central line. As material moves right to left, any portion already left of that line is not processed.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="140" y="40" width="100" height="34" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+          <text x="190" y="61" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">F1 ULTRA</text>
+          <line x1="190" y1="80" x2="190" y2="175" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="198" y="100" fill="#ef4444" ${MONO} font-size="8">CENTRAL LINE</text>
+          <rect x="40" y="105" width="150" height="70" fill="#93a4b4" fill-opacity="0.08"/>
+          <text x="182" y="100" fill="#93a4b4" ${MONO} font-size="8" text-anchor="end">← NOT PROCESSED</text>
+          <svg x="40" y="0" width="300" height="280" viewBox="40 0 300 280">
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="120,0; -120,0" dur="5s" repeatCount="indefinite"/>
+              <rect x="110" y="140" width="160" height="14" rx="1" fill="#2c3b4a" stroke="#f2a93b"/>
+              <text x="190" y="151" fill="#f2a93b" ${MONO} font-size="7" text-anchor="middle">500 mm STOCK</text>
+            </g>
+          </svg>
+          <polygon points="190,74 186,140 194,140" fill="url(#laserCone)" style="animation: pulseLaser 0.6s infinite;"/>
+          ${convBelt(155)}
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Material flows right → left past the line</text>
+        </svg>
+      `
+    },
+    'c5-continuous': {
+      title: 'CONTINUOUS PROCESSING',
+      status: 'MARK • INDEX • EJECT',
+      captionTitle: 'Process → Start',
+      captionDesc: 'Click Process → Start: the F1 Ultra marks the parts in the field, the stepper indexes the belt forward, and finished parts are ejected off the left end continuously.',
+      svg: `
+        <svg class="stage-svg" viewBox="0 0 380 280">
+          <rect x="140" y="40" width="100" height="34" rx="4" fill="#1b2530" stroke="#f2a93b" stroke-width="2"/>
+          <text x="190" y="61" fill="#f2a93b" ${MONO} font-size="9" font-weight="700" text-anchor="middle">F1 ULTRA</text>
+          <polygon points="190,74 185,150 195,150" fill="url(#laserCone)" style="animation: pulseLaser 0.5s infinite;"/>
+          <svg x="40" y="0" width="300" height="280" viewBox="40 0 300 280">
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0,0; -100,0" dur="2.5s" repeatCount="indefinite"/>
+              <rect x="75" y="135" width="30" height="20" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+              <rect x="175" y="135" width="30" height="20" rx="2" fill="#2c3b4a" stroke="#4ade80"/>
+              <rect x="275" y="135" width="30" height="20" rx="2" fill="#2c3b4a" stroke="#93a4b4"/>
+              <rect x="375" y="135" width="30" height="20" rx="2" fill="#2c3b4a" stroke="#93a4b4"/>
+            </g>
+          </svg>
+          ${convBelt(155)}
+          <text x="190" y="210" fill="#93a4b4" ${MONO} font-size="9" text-anchor="middle">Infeed (right) → Laser → Eject (left)</text>
+          <text x="190" y="240" fill="#4ade80" ${MONO} font-size="11" text-anchor="middle">Hands-free continuous batch flow</text>
+        </svg>
+      `
+    }
+  };
+
+  // ==========================================================
   // Conveyor Chapters Stage Engine (Fixed Scoping & Binding)
   // ==========================================================
   const convStageCanvas = document.getElementById('convStageCanvas');
@@ -1804,44 +2341,154 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================
   const f1QuizData = [
     {
-      question: "Scenario 1: You unbox and set up the xTool F1 Ultra. Before powering on the laser to run your first job, what optical preparation step must be completed every time?",
+      question: "Question 1 (Laser Primer): What property makes laser light fundamentally different from an ordinary light bulb?",
+      options: [
+        { text: "It emits every color of the spectrum at once in all directions.", correct: false },
+        { text: "Its photons share the same wavelength and oscillate in unison (monochromatic and coherent), amplified by stimulated emission between resonator mirrors.", correct: true },
+        { text: "It is produced by heating a tungsten filament to a higher temperature.", correct: false },
+        { text: "It only exists in the ultraviolet part of the spectrum.", correct: false }
+      ],
+      explanation: "LASER stands for Light Amplification by Stimulated Emission of Radiation. Photons bounce between a 100% mirror and a partial output mirror, producing a monochromatic, coherent, parallel beam."
+    },
+    {
+      question: "Question 2 (Laser Primer): Why did lasers become industrial workhorses after their invention in 1960?",
+      options: [
+        { text: "Focused light never dulls, applies zero mechanical tool pressure, and needs no stamping dies or tool changes.", correct: true },
+        { text: "Lasers were cheaper than hand tools from day one.", correct: false },
+        { text: "Lasers physically press material into shape like a stamping die.", correct: false },
+        { text: "Lasers only worked on paper, which was the dominant manufacturing material.", correct: false }
+      ],
+      explanation: "A laser beam experiences no tool wear, exerts no drag on fragile workpieces, and cuts intricate geometries without mechanical dies or tool-replacement downtime."
+    },
+    {
+      question: "Question 3 (Laser Primer): A part made of bare stainless steel needs a permanent serial number. Which wavelength is best absorbed by the metal?",
+      options: [
+        { text: "~445 nm Blue Diode", correct: false },
+        { text: "~10,600 nm CO₂", correct: false },
+        { text: "~1064 nm Fiber (infrared)", correct: true },
+        { text: "Any wavelength works equally well on metal.", correct: false }
+      ],
+      explanation: "Metals reflect long wavelengths but readily absorb ~1064 nm fiber laser energy. Blue diode (445 nm) suits woods, leather and dark acrylic, and CO₂ (10,600 nm) suits glass, clear acrylic and stone."
+    },
+    {
+      question: "Question 4 (Laser Primer): How does a galvanometer (galvo) laser differ from a gantry laser?",
+      options: [
+        { text: "The galvo laser head rides on X/Y rails like a 3D printer.", correct: false },
+        { text: "The galvo head stays stationary while two micro-mirrors steer the beam at up to 10,000 mm/s, versus about 200–600 mm/s for gantry axes.", correct: true },
+        { text: "Galvo systems are slower but cover larger beds.", correct: false },
+        { text: "Galvo systems require the workpiece to move instead of the beam.", correct: false }
+      ],
+      explanation: "Gantry systems move the whole laser head on mechanical axes (200–600 mm/s). Galvo systems keep the head fixed and tilt lightweight mirrors to deflect the beam at up to 10,000 mm/s."
+    },
+    {
+      question: "Question 5 (Chapter 01): Which statement accurately describes the dual-laser capabilities of the xTool F1 Ultra?",
+      options: [
+        { text: "It combines a 10W CO₂ laser and a 5W UV laser.", correct: false },
+        { text: "It requires manual lens swapping whenever changing between wood and metal.", correct: false },
+        { text: "It only engraves bare metals and cannot process wood or acrylic.", correct: false },
+        { text: "It combines a 20W 445 ± 15 nm Blue Diode laser and a 20W 1064 ± 5 nm Infrared Fiber laser.", correct: true }
+      ],
+      explanation: "Page 04 specifies a 20W 445 ± 15 nm blue-light laser and a 20W 1064 ± 5 nm fiber infrared laser in one galvo head, switched automatically via software."
+    },
+    {
+      question: "Question 6 (Chapter 01): What are the F1 Ultra's native working area and maximum processing speed?",
+      options: [
+        { text: "220 mm × 220 mm at up to 10,000 mm/s", correct: true },
+        { text: "400 mm × 400 mm at up to 600 mm/s", correct: false },
+        { text: "100 mm × 100 mm at up to 1,000 mm/s", correct: false },
+        { text: "500 mm × 220 mm at up to 20,000 mm/s", correct: false }
+      ],
+      explanation: "Page 04: 'Internal working area: 220 mm × 220 mm. Maximum processing speed: 10,000 mm/s.'"
+    },
+    {
+      question: "Question 7 (Chapter 01): The F1 Ultra is produced in two models. Which pairing is correct?",
+      options: [
+        { text: "MXF-K002-001 is Class 4; MXF-K002-B20 is Class 1.", correct: false },
+        { text: "MXF-K002-001 is Class 1 (enclosed); MXF-K002-B20 is Class 4.", correct: true },
+        { text: "Both models are Class 2 consumer lasers.", correct: false },
+        { text: "Both models are Class 3R with no enclosure.", correct: false }
+      ],
+      explanation: "Pages 01 & 04: MXF-K002-001 is the Class 1 enclosed system and MXF-K002-B20 is the Class 4 laser system."
+    },
+    {
+      question: "Question 8 (Chapter 02): Before powering on the laser to run a job, what optical preparation step must be completed every time?",
       options: [
         { text: "Coat the lens in optical silicone oil.", correct: false },
-        { text: "Pull down the field lens protector to remove it.", correct: true },
         { text: "Unscrew the internal galvo mirror housing.", correct: false },
+        { text: "Pull down the field lens protector to remove it.", correct: true },
         { text: "Leave the rubber protector attached to filter back-reflections.", correct: false }
       ],
-      explanation: "Page 05 mandates: 'Pull down the field lens protector to remove it... Ensure that the protector is removed every time before you use the machine.' Firing through the cap permanently destroys it."
+      explanation: "Page 05: 'Pull down the field lens protector to remove it... Ensure that the protector is removed every time before you use the machine.' Firing through the cap destroys it."
     },
     {
-      question: "Scenario 2: When connecting the touchscreen controller circular plug into the side connector of the F1 Ultra, what alignment is required?",
+      question: "Question 9 (Chapter 02): What happens when you remove the access-control key from the F1 Ultra?",
       options: [
-        { text: "The notch at the end of the connector must face down.", correct: false },
+        { text: "Nothing; the key is decorative.", correct: false },
+        { text: "Processing and related functions are disabled, acting as an access-control lockout.", correct: true },
+        { text: "The machine switches automatically to the blue diode laser.", correct: false },
+        { text: "The touchscreen resets to factory language settings.", correct: false }
+      ],
+      explanation: "Page 05: 'Insert the key. You can remove the key to disable the processing and related functions of the machine.'"
+    },
+    {
+      question: "Question 10 (Chapter 02): Which statement about the emergency stop button is correct?",
+      options: [
+        { text: "Press it at the end of every job to power the machine down.", correct: false },
+        { text: "Turn it counter-clockwise to latch it permanently.", correct: false },
+        { text: "It only stops the exhaust fan, not the laser.", correct: false },
+        { text: "Turn it clockwise to release it, and never use it as a routine power switch.", correct: true }
+      ],
+      explanation: "Pages 05 & 08: ensure the emergency stop button is released (turn clockwise) and do not use the emergency stop button as a power switch."
+    },
+    {
+      question: "Question 11 (Chapter 02): When plugging the touchscreen controller's circular connector into the side of the F1 Ultra, what alignment is required?",
+      options: [
         { text: "The notch at the end of the connector must face up.", correct: true },
+        { text: "The notch at the end of the connector must face down.", correct: false },
         { text: "Rotate the connector continuously until it snaps under high torque.", correct: false },
-        { text: "It uses a reversible connector with zero keying notches.", correct: false }
+        { text: "It is a reversible connector with no keying notch.", correct: false }
       ],
-      explanation: "Page 06 specifically warns: 'To insert the connector, ensure that the notch at the end faces up.' Forcing it incorrectly bends the delicate multi-pin bus."
+      explanation: "Page 06: 'To insert the connector, ensure that the notch at the end faces up.' Forcing it the wrong way bends the multi-pin bus."
     },
     {
-      question: "Scenario 3: After several cutting runs, smoke begins leaking out of the protective enclosure. During maintenance of the exhaust fan, what physical precaution must be observed?",
+      question: "Question 12 (Chapter 03): You need to cut through 3 mm basswood and then batch-engrave 50 identical coasters. Which accessories apply?",
       options: [
-        { text: "Tilt the machine slightly so falling dust does not enter the circuit board.", correct: true },
-        { text: "Submerge the rear outlet in cold tap water while running.", correct: false },
-        { text: "Turn the emergency stop button counter-clockwise while holding the power switch.", correct: false },
-        { text: "Leave the power cable plugged in to ground the chassis.", correct: false }
+        { text: "Use the field lens protector for cutting and the E-stop for positioning.", correct: false },
+        { text: "Use the slatted panel for cutting (reduces underside burning and protects the baseplate) and the L-shaped positioning piece for repeatable batch placement.", correct: true },
+        { text: "Cut directly on the baseplate and hand-place each coaster by eye.", correct: false },
+        { text: "Use the L-shaped piece for cutting and the slatted panel for alignment.", correct: false }
       ],
-      explanation: "Page 11 warns: 'To avoid dust falling into the circuit board, slightly tilt the machine' and 'Disconnect power before maintaining the product.'"
+      explanation: "Page 07: the slatted panel reduces burned areas and protects the baseplate when cutting; the L-shaped positioning piece places material in the same position every time during batch processing."
     },
     {
-      question: "Scenario 4: Which statement accurately describes the dual-laser capabilities of the xTool F1 Ultra?",
+      question: "Question 13 (Chapter 04): Which three physical buttons are on the F1 Ultra touchscreen controller?",
       options: [
-        { text: "It combines a 10W CO2 laser and a 5W UV laser.", correct: false },
-        { text: "It combines a 20W 445±15 nm Blue Diode laser and a 20W 1064±5 nm Infrared Fiber laser.", correct: true },
-        { text: "It requires manual lens swapping whenever changing between wood and metal.", correct: false },
-        { text: "It only engraves bare metals and cannot cut wood or acrylic.", correct: false }
+        { text: "Power, Reset, and Wi-Fi", correct: false },
+        { text: "Laser Select, Focus, and Pause", correct: false },
+        { text: "Up/Down, Framing, and Start/Stop", correct: true },
+        { text: "Home, Menu, and Exhaust", correct: false }
       ],
-      explanation: "Page 04 specifies: 20W 445±15 nm blue-light laser and 20W 1064±5 nm fiber infrared laser. It cuts wood/acrylic and deeply engraves all metals."
+      explanation: "Page 04: the Up/Down button lifts/lowers the laser module, the Framing button starts/stops framing, and the Start/Stop button starts/stops processing."
+    },
+    {
+      question: "Question 14 (Chapter 05): Engravings are coming out shallow and cuts are no longer going through. What is the correct maintenance response?",
+      options: [
+        { text: "Increase power to 200% in XCS.", correct: false },
+        { text: "Disconnect power, then clean the field lens with a lint-free cloth moistened with alcohol.", correct: true },
+        { text: "Wipe the lens with a dry paper towel while the laser is running.", correct: false },
+        { text: "Replace the access key.", correct: false }
+      ],
+      explanation: "Page 11: shallow engraving or incomplete cuts can indicate a dirty field lens. Disconnect power before maintenance and clean it with a lint-free cloth moistened with alcohol."
+    },
+    {
+      question: "Question 15 (Chapter 05): Smoke is leaking out of the protective enclosure. While cleaning the exhaust fan and smoke outlet, what precaution must you take?",
+      options: [
+        { text: "Submerge the rear outlet in water while running.", correct: false },
+        { text: "Leave the power cable plugged in to ground the chassis.", correct: false },
+        { text: "Turn the emergency stop counter-clockwise while holding the power switch.", correct: false },
+        { text: "Disconnect power and slightly tilt the machine so falling dust does not enter the circuit board.", correct: true }
+      ],
+      explanation: "Page 11: smoke escaping means the fan and smoke outlet may be blocked by dust. Disconnect power, and 'to avoid dust falling into the circuit board, slightly tilt the machine.'"
     }
   ];
 
@@ -1917,12 +2564,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const evalText = document.getElementById('f1EvalText');
       if (scoreText) scoreText.textContent = `You scored ${f1Score} of ${f1QuizData.length}`;
       if (evalText) {
-        if (f1Score === 4) {
-          evalText.textContent = "Status: F1 Ultra Laser Systems Specialist. You have complete operational command over optical hygiene, galvo controls, and machine safety.";
-        } else if (f1Score >= 2) {
-          evalText.textContent = "Status: Laser Technician. Review Chapters 02 and 05 to solidify connector and tilt hygiene rules.";
+        const f1Pct = f1Score / f1QuizData.length;
+        if (f1Pct === 1) {
+          evalText.textContent = "Status: F1 Ultra Laser Systems Specialist. You have complete operational command over laser physics, optical hygiene, galvo controls, and machine safety.";
+        } else if (f1Pct >= 0.7) {
+          evalText.textContent = "Status: Laser Technician. Review the explanations above for the questions you missed, then revisit those chapters.";
         } else {
-          evalText.textContent = "Status: Apprentice. Re-read the technical guide before powering on the high-power dual-laser system.";
+          evalText.textContent = "Status: Apprentice. Re-read the laser primer and Chapters 01–05 before powering on the high-power dual-laser system.";
         }
       }
       if (scoreCard) scoreCard.style.display = 'block';
@@ -1938,44 +2586,164 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================
   const convQuizData = [
     {
-      question: "Scenario 1: According to the official xTool Quick Start Guide, how far above the material must you pull down the protective enclosure before processing?",
+      question: "Question 1 (Conveyor Primer): What did Oliver Evans build on Delaware's Red Clay Creek in the 1780s–1790s?",
+      options: [
+        { text: "The first moving automobile assembly line.", correct: false },
+        { text: "The first fully mechanized, continuous-flow mill, linking bucket elevators, flat belt conveyors and screw augers powered by a waterwheel.", correct: true },
+        { text: "The first electric roller conveyor for warehouses.", correct: false },
+        { text: "An overhead trolley line for meatpacking.", correct: false }
+      ],
+      explanation: "Evans' automated flour mill moved grain from the hopper to finished flour with no manual porterage, using waterwheel-powered bucket elevators, flat leather belts and screw augers."
+    },
+    {
+      question: "Question 2 (Conveyor Primer): What directly inspired Henry Ford's moving assembly line?",
+      options: [
+        { text: "Cincinnati and Chicago meatpacking 'disassembly lines', where carcasses moved on overhead trolley rails past stationary butchers.", correct: true },
+        { text: "Oliver Evans' bucket elevators.", correct: false },
+        { text: "Airport baggage carousels.", correct: false },
+        { text: "Robotic pallet transfer systems.", correct: false }
+      ],
+      explanation: "Ford openly credited the overhead-rail meatpacking disassembly lines of the 1870s–1880s as the inspiration for reversing the process into an assembly line."
+    },
+    {
+      question: "Question 3 (Conveyor Primer): What was the impact of Ford's 1913 Highland Park moving chassis line?",
+      options: [
+        { text: "Model T assembly time rose from 93 minutes to 12 hours.", correct: false },
+        { text: "It eliminated the need for any workers.", correct: false },
+        { text: "Model T assembly time dropped from about 12 hours to 93 minutes, establishing takt time and continuous flow.", correct: true },
+        { text: "It replaced belts with overhead monorails.", correct: false }
+      ],
+      explanation: "Moving the chassis past fixed stations cut build time from 12 hours to 93 minutes and established core Industrial Engineering concepts: takt time, continuous flow, and eliminating transport waste."
+    },
+    {
+      question: "Question 4 (Conveyor Primer): A robotic CNC cell needs parts to register into sub-millimeter coordinates at each station. Which conveyor geometry fits best?",
+      options: [
+        { text: "Gravity roller conveyor", correct: false },
+        { text: "Overhead chain/monorail", correct: false },
+        { text: "Pallet / transfer conveyor with rigid tooling plates", correct: true },
+        { text: "Bulk flat belt with no fixtures", correct: false }
+      ],
+      explanation: "Pallet/transfer conveyors carry rigid tooling plates on precision rails so parts register into exact coordinates for CNC and robotic cells."
+    },
+    {
+      question: "Question 5 (Conveyor Primer): Which drive motor fits a conveyor that must index, stop at exact positions, and support step-distance calibration?",
+      options: [
+        { text: "An AC induction gearmotor running at one fixed speed", correct: false },
+        { text: "A brushless DC or stepper motor", correct: true },
+        { text: "A waterwheel", correct: false },
+        { text: "A gravity-only roller bed with no motor", correct: false }
+      ],
+      explanation: "AC induction gearmotors suit continuous fixed-speed bulk transfer. Brushless DC and stepper motors are used where precise indexing, start/stop positioning and step-distance calibration are essential."
+    },
+    {
+      question: "Question 6 (Conveyor Primer): How is power transferred from the motor drive shaft to the conveyor's head roller?",
+      options: [
+        { text: "Through timing belts, drive chains, or direct-drive gearboxes", correct: true },
+        { text: "Through the workpieces pushing each other", correct: false },
+        { text: "Through compressed-air nozzles on the belt", correct: false },
+        { text: "Through the laser beam", correct: false }
+      ],
+      explanation: "The transmission links the motor shaft to the head roller using timing belts, drive chains, or direct-drive gearboxes."
+    },
+    {
+      question: "Question 7 (Conveyor Primer): Why do modern conveyors use Variable Frequency Drives (VFDs) or digital stepper controllers?",
+      options: [
+        { text: "To run the belt at maximum speed instantly on every start.", correct: false },
+        { text: "To heat the belt for better grip.", correct: false },
+        { text: "To let software match speeds, ramp acceleration smoothly to avoid material slippage, and stop on exact sensor coordinates.", correct: true },
+        { text: "To power the laser module.", correct: false }
+      ],
+      explanation: "VFDs and stepper controllers govern conveyor speed so software can coordinate speed matching, ramp acceleration smoothly so material doesn't slip, and stop exactly where a sensor triggers."
+    },
+    {
+      question: "Question 8 (Conveyor Primer): How is the xTool Auto Streamline™ Conveyor categorized?",
+      options: [
+        { text: "Overhead chain monorail with AC gearmotor", correct: false },
+        { text: "Gravity roller bed with manual indexing", correct: false },
+        { text: "Integrated synchronous flat-belt micro-conveyor with closed-loop stepper positioning", correct: true },
+        { text: "Pneumatic pallet transfer system", correct: false }
+      ],
+      explanation: "It is an integrated synchronous flat-belt micro-conveyor: a stepper motor indexes the belt right-to-left, coordinated with overhead camera machine vision."
+    },
+    {
+      question: "Question 9 (Chapter 01): How far above the material must you pull down the protective enclosure before processing?",
       options: [
         { text: "Exactly 15 mm to 20 mm to allow smoke exhaust flow.", correct: false },
-        { text: "No more than 5 mm above the material surface.", correct: true },
-        { text: "Flush with the top surface of the conveyor idler rollers.", correct: false },
-        { text: "Leave it fully raised when running continuous batch mode.", correct: false }
+        { text: "Flush with the top of the conveyor idler rollers.", correct: false },
+        { text: "Leave it fully raised in continuous batch mode.", correct: false },
+        { text: "No more than 5 mm above the material surface.", correct: true }
       ],
-      explanation: "Quick Start Guide Pages 09 and 10 state: 'Pull down the protective enclosure until it remains no more than 5 mm above the material before processing.'"
+      explanation: "Pages 09 and 10: 'Pull down the protective enclosure until it remains no more than 5 mm above the material before processing.'"
     },
     {
-      question: "Scenario 2: Which fastening kit components must be used to mount the conveyor onto the xTool F1 Ultra chassis?",
+      question: "Question 10 (Chapters 01 & 05): When staging materials for batch processing on the belt, which requirement is mandated?",
       options: [
-        { text: "Fastening pieces C and D, Screw M4*8, and 2.5 mm screwdriver.", correct: false },
-        { text: "Fastening pieces A and B, Screw M4*10, and 3 mm screwdriver.", correct: true },
-        { text: "Only magnetic locating pins with zero screws.", correct: false },
-        { text: "Universal brackets with M3*12 thumb-bolts.", correct: false }
+        { text: "Mixed substrates are fine as long as they are magnetically secured.", correct: false },
+        { text: "Materials must be identical and must not touch or overlap each other, and hands stay out of the processing area.", correct: true },
+        { text: "Stack materials two high to maximize throughput.", correct: false },
+        { text: "Hold parts down by hand as the conveyor indexes.", correct: false }
       ],
-      explanation: "Page 01 lists Fastening pieces A & B, Screw M4*10, and the 3 mm screwdriver for the F1 Ultra. Pieces C & D, M4*8, and the 2.5 mm driver are specifically for the F2 Ultra."
+      explanation: "Page 09: use identical materials, keep your hand away from the processing area to avoid skin injuries, and ensure materials do not touch or overlap."
     },
     {
-      question: "Scenario 3: When processing large materials up to 500 mm in length, which rule governs laser coverage according to the manual?",
+      question: "Question 11 (Chapter 02): Which fastening kit components mount the conveyor to the xTool F1 Ultra?",
       options: [
-        { text: "The galvo scans across the entire width and length simultaneously.", correct: false },
-        { text: "The laser beam directs solely onto the central line; any portion to the left of this line will not be processed.", correct: true },
-        { text: "Workpieces must be rotated 90 degrees every 100 mm of travel.", correct: false },
-        { text: "The conveyor must be run in reverse direction from left to right.", correct: false }
+        { text: "Fastening pieces C and D, Screw M4*8, and a 2.5 mm screwdriver", correct: false },
+        { text: "Fastening pieces A and B, Screw M4*10, and a 3 mm screwdriver", correct: true },
+        { text: "Magnetic locating pins with no screws", correct: false },
+        { text: "Universal brackets with M3*12 thumb-bolts", correct: false }
       ],
-      explanation: "Page 10 states: 'When processing large materials, the device directs laser beams solely onto the central line of the conveyor. As the material moves from right to left, any portion of the material on the left of this central line will not be processed.'"
+      explanation: "Page 01 lists fastening pieces A and B, Screw M4*10, and the 3 mm screwdriver for the F1 Ultra. Pieces C and D, M4*8 and the 2.5 mm driver are for the F2 Ultra."
     },
     {
-      question: "Scenario 4: When staging materials for batch processing on the conveyor belt, which requirement is strictly mandated by the safety instructions?",
+      question: "Question 12 (Chapter 02): What is the correct docking sequence?",
       options: [
-        { text: "Materials can be mixed substrates as long as they are magnetically secured.", correct: false },
-        { text: "Materials must be identical, must not touch, and must not overlap with each other.", correct: true },
-        { text: "Materials must be stacked two high to maximize automated feeder throughput.", correct: false },
-        { text: "Operators must manually hold parts down as the conveyor indexes forward.", correct: false }
+        { text: "Plug in the cable, then mount piece A to the conveyor, then piece B to the F1 Ultra.", correct: false },
+        { text: "Mount piece B to the conveyor, mount piece A to the F1 Ultra, align and screw A and B together, then plug in the connection cable.", correct: true },
+        { text: "Screw A and B together first, then attach the joined bracket with tape.", correct: false },
+        { text: "Mount both pieces to the F1 Ultra and slide the conveyor underneath.", correct: false }
       ],
-      explanation: "Page 09 explicitly states: 'Ensure that you use identical materials. When placing materials during processing, keep your hand away from the processing area to avoid skin injuries. Ensure that the materials do not touch or overlap with each other.'"
+      explanation: "Pages 06–08: piece B goes on the conveyor (correct direction), piece A goes on the F1 Ultra, the holes on A and B are aligned and screwed together, and finally the connection cable links the conveyor side port to the F1 Ultra."
+    },
+    {
+      question: "Question 13 (Chapter 03): After connecting to XCS and opening Device Settings, what must you change to run the conveyor?",
+      options: [
+        { text: "Switch Working Mode from Regular Surface to Conveyor (Auto-Stream or Long Material).", correct: true },
+        { text: "Change the laser source from Fiber to Diode.", correct: false },
+        { text: "Disable Wi-Fi.", correct: false },
+        { text: "Set the language to English.", correct: false }
+      ],
+      explanation: "Under Working Mode, switch from Regular Surface to Conveyor, then choose Auto-Stream or Long Material. Also verify the software feed arrows match the physical right-to-left flow."
+    },
+    {
+      question: "Question 14 (Chapter 04): Your current XCS calibration value is 100.00 and the calipers measure 98.40 mm between the two calibration marks. What is the corrected value?",
+      options: [
+        { text: "98.400", correct: false },
+        { text: "100.000", correct: false },
+        { text: "101.626", correct: true },
+        { text: "96.826", correct: false }
+      ],
+      explanation: "Corrected = current × (100.00 ÷ measured) = 100.00 × (100.00 ÷ 98.40) ≈ 101.626. The belt under-traveled, so the step scale must increase."
+    },
+    {
+      question: "Question 15 (Chapter 05): What does Smart Fill do?",
+      options: [
+        { text: "It fills the conveyor hopper with blanks automatically.", correct: false },
+        { text: "It duplicates the artwork from a master part onto every blank the camera detected.", correct: true },
+        { text: "It fills engraved areas with paint.", correct: false },
+        { text: "It increases laser power to fill deep cuts.", correct: false }
+      ],
+      explanation: "Position artwork on a master part and click Smart Fill: XCS copies it across all detected blanks automatically."
+    },
+    {
+      question: "Question 16 (Chapter 05): When processing large materials up to 500 mm, which rule governs laser coverage?",
+      options: [
+        { text: "The galvo scans the whole width and length at once.", correct: false },
+        { text: "Workpieces must be rotated 90° every 100 mm of travel.", correct: false },
+        { text: "The laser fires only on the conveyor's central line; any portion already to the left of that line will not be processed.", correct: true },
+        { text: "The conveyor must run left to right.", correct: false }
+      ],
+      explanation: "Page 10: 'the device directs laser beams solely onto the central line of the conveyor. As the material moves from right to left, any portion of the material on the left of this central line will not be processed.'"
     }
   ];
 
@@ -2051,12 +2819,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const evalText = document.getElementById('convEvalText');
       if (scoreText) scoreText.textContent = `You scored ${convScore} of ${convQuizData.length}`;
       if (evalText) {
-        if (convScore === 4) {
-          evalText.textContent = "Status: Subject Matter Expert (SME). You demonstrate mastery over xTool F1 Ultra mounting hardware, safety enclosures, and processing rules.";
-        } else if (convScore >= 2) {
-          evalText.textContent = "Status: Qualified Process Technician. Review Pages 06–10 of the Quick Start Guide to master fastener and enclosure specs.";
+        const convPct = convScore / convQuizData.length;
+        if (convPct === 1) {
+          evalText.textContent = "Status: Subject Matter Expert (SME). You demonstrate mastery over conveyor history, drive systems, mounting hardware, calibration, and processing rules.";
+        } else if (convPct >= 0.7) {
+          evalText.textContent = "Status: Qualified Process Technician. Review the explanations above for the questions you missed, then revisit those chapters.";
         } else {
-          evalText.textContent = "Status: Trainee Operator. Recommend re-reading Chapters 01, 02, and 05 before operating production batches.";
+          evalText.textContent = "Status: Trainee Operator. Recommend re-reading the conveyor primer and Chapters 01–05 before operating production batches.";
         }
       }
       if (scoreCard) scoreCard.style.display = 'block';
@@ -2073,8 +2842,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const measuredValInput = document.getElementById('measuredVal');
   const calcResult = document.getElementById('calcResult');
 
-  if (calcBtn) {
-    calcBtn.addEventListener('click', () => {
+  if (calcBtn && currentValInput && measuredValInput && calcResult) {
+    const runCalc = () => {
       const current = parseFloat(currentValInput.value);
       const measured = parseFloat(measuredValInput.value);
       if (!current || !measured || measured <= 0) {
@@ -2085,6 +2854,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const corrected = (current * (100.00 / measured)).toFixed(3);
       calcResult.style.display = 'block';
       calcResult.innerHTML = `<strong>Calibrated Scale Factor:</strong> <span style="color:var(--color-amber);">${corrected}</span><br><small style="color:var(--color-muted);">Enter ${corrected} into the XCS Step Distance setting and re-verify with a 100 mm mark.</small>`;
+    };
+    calcBtn.addEventListener('click', runCalc);
+    [currentValInput, measuredValInput].forEach(input => {
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') runCalc();
+      });
     });
   }
 });
