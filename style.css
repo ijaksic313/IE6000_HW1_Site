@@ -785,6 +785,7 @@ img { max-width: 100%; display: block; }
 }
 
 .primer-interactive-item {
+  position: relative;
   background: var(--color-panel-raised);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius);
@@ -982,6 +983,14 @@ img { max-width: 100%; display: block; }
   visibility: visible;
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+/* A hovered card (and its citation popup) must paint above sibling cards,
+   which also form stacking contexts via their hover/active transforms. */
+.interactive-item:hover,
+.interactive-item:focus-within,
+.primer-interactive-item:hover,
+.primer-interactive-item:focus-within {
+  z-index: 30;
 }
 .cite-card strong {
   color: var(--color-amber);
@@ -1237,6 +1246,9 @@ img { max-width: 100%; display: block; }
 @keyframes tiltMachine {
   0%, 100% { transform: rotate(0deg); }
   40%, 70% { transform: rotate(-15deg); }
+}
+@keyframes spinFan {
+  to { transform: rotate(360deg); }
 }
 @keyframes wipeLens {
   0%, 100% { transform: translate(0, 0); }
